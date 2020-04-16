@@ -3,6 +3,7 @@ html
   head 
     title Pug project
     meta(charset='UTF-8')
+    
   body
     header
       logo IT
@@ -14,7 +15,8 @@ html
     main 
       each index in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
         article 
-          img(src="https://m.21vek.ru/img/galleries/404/88/preview_b/granni_0164_583560b9a6f67.jpeg")
+          .picture
+            div=index
           p Здесь должна быть новость вашего портала.Здесь должна быть новость вашего портала.Здесь должна быть новость вашего портала.Здесь должна быть новость вашего портала.
           .newsstat
             span просмотров 200

@@ -59,13 +59,40 @@ main article {
 }
 main article p {
   padding: 10px;
+  text-align: justify;
 }
 main article img {
   width: 300px;
   padding: 10px;
 }
+main article .picture {
+  margin:20px auto;
+  width: 80%;
+  height: 300px;
+  padding: 10px;
+  box-shadow: -1px -1px 4px 4px #aa88ad;
+  background-image: url('../images/robot2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-clip: border-box;
+  position: relative;
+}
+main article .picture div {
+  width: 50px;
+  height: 50px;
+  z-index: 20;
+  position: absolute;
+  font-size:35px;
+  font-weight: bold;
+  left: 0;
+  bottom: 0;
+  background-color: #df7645;
+  color: #fff;
+  
+}
 main article .newsstat {
-  color: #990099;
+  color: #fff;
+  background-color:#ae76ae;
   padding: 10px;
   border-top: 1px dashed #990099;
 }
@@ -79,7 +106,7 @@ footer {
   height: 50px;
   padding: 20px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 594px) {
   header {
     flex-direction: column;
   }
@@ -92,5 +119,26 @@ footer {
   header ul li {
     border-left: none;
     font-size: 16pt;
+    padding: 0 7px;
   }
 }
+@media (max-width: 304px) {
+  main article  {
+  	 min-width: 260px;
+   
+  }
+  header ul {
+    padding:3px;  
+  }	
+}
+@media (max-width: 912px) {
+  header ul li {
+    font-size: 13pt;
+    padding: 0 8px;
+  }
+}  
+@media (max-width: 836px) {
+  header logo {
+    text-align: center;
+  }
+}  
