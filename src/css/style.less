@@ -1,0 +1,127 @@
+*{
+  margin:0;
+  padding:0;
+}
+@headercolor:#44ccff;
+@logocolor:fuchsia;
+@fontsizemenu:20pt;
+header{
+  background-color:@headercolor;
+  height: auto;
+  display:flex;
+  flex-direction:colomn;
+  flex-wrap:wrap;
+  padding:0 20px;
+  .logo{
+  letter-spacing:15px;
+  font-size:@fontsizemenu;
+  color:@logocolor;
+    padding:10px;
+    flex:1;
+    text-transform:uppercase;
+    span{
+      color:spin(@logocolor,70);
+    }
+}
+  ul{
+    list-style:none;
+    display:flex;
+    padding:10px;
+    flex:1;
+    justify-content:space-between;
+    li{
+      font-size:  @fontsizemenu;
+      color:darken(@logocolor,20);
+      text-transform:uppercase;
+      border-left: 1px solid darken(@logocolor,20);
+      padding:0 10px;
+      
+    }
+  }
+ 
+}
+ .promohead{
+    background-color:darken(@headercolor,50%);
+    width:100%;
+    color:spin(@logocolor,90);
+    text-align:center;
+    height:40px;  
+    padding:5px;
+  }
+main{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  align-items:top;
+  justify-content:space-around;
+  article{
+    margin:20px;
+    border: 1px solid black;
+    min-width:300px;
+    background-color:#fff;
+    flex:1;
+    text-align:center;
+    p{
+      padding:10px;
+      
+    }
+	 .picture {
+		  margin:20px auto;
+		  width: 80%;
+		  height: 300px;
+		  padding: 10px;
+		  box-shadow: -1px -1px 4px 4px #aa88ad;
+		  background-image: url('../images/robot2.jpg');
+		  background-size: cover;
+		  background-position: center center;
+		  background-clip: border-box;
+		  position: relative;
+		  div {
+			  width: 50px;
+			  height: 50px;
+			  z-index: 20;
+			  position: absolute;
+			  font-size:35px;
+			  font-weight: bold;
+			  left: 0;
+			  bottom: 0;
+			  background-color: #df7645;
+			  color: #fff;
+			  
+			}
+		}
+    .newsstat{
+      color:darken(@logocolor,20);
+      padding:10px;
+      border-top:1px dashed darken(@logocolor,20);
+      span{
+        padding-left:6px;
+      }
+      
+    }
+  }
+}
+footer{
+  background-color:black;
+  color:darken(@logocolor,20);
+  text-align:center;
+  height:50px;
+  padding:20px;
+}
+
+@media (max-width:1200px){
+  header{
+    flex-direction:column;
+    logo{
+      border-bottom: 1px solid darken(@logocolor,20);
+     } 
+    ul{
+    flex-direction:column;
+        li{
+           border-left:none;
+           font-size:16pt;
+         } 
+    }
+  }
+}
+
