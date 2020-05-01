@@ -5,6 +5,8 @@
 @headercolor:#44ccff;
 @logocolor:fuchsia;
 @fontsizemenu:20pt;
+@profilecolor:#5434ed;
+@infocolor:#3489ab;
 header{
   background-color:@headercolor;
   height: auto;
@@ -48,11 +50,16 @@ header{
     height:40px;  
     padding:5px;
   }
-main{
+  main {
+    display:flex;
+      
+  }
+.content{
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
   align-items:top;
+  width:70%;
   justify-content:space-around;
   article{
     margin:20px;
@@ -100,7 +107,38 @@ main{
       
     }
   }
+  
 }
+.aside {
+  background-color:#dedede;
+  border-right:1px solid #cdcdcd;
+  .profile {
+    padding:15px;
+    &__header {
+      font-size:25px;
+      letter-spacing:2px;
+      color:@profilecolor; 
+      margin-bottom:0px;
+      text-decoration:underline;        
+    }
+    &__login {
+      margin-bottom:15px;
+      a {
+        color:darken(spin(@profilecolor,70),20%);
+        font-size:15px;
+        text-decoration:none;
+        cursor:pointer;
+        &:hover {
+          color:spin(@profilecolor,70);        
+        }
+      }    
+    } 
+    &__info {
+      color:@infocolor;    
+    }   
+  }         
+}
+
 footer{
   background-color:black;
   color:darken(@logocolor,20);
