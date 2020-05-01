@@ -7,6 +7,8 @@
 @fontsizemenu:20pt;
 @profilecolor:#5434ed;
 @infocolor:#3489ab;
+@circlecolor:7px solid #3489a0;
+@imagecolor:#3489a0;
 header{
   background-color:@headercolor;
   height: auto;
@@ -136,6 +138,118 @@ header{
     &__info {
       color:@infocolor;    
     }   
+  }
+  .images {
+    margin-top:15px;
+    padding:15px;
+    &__list {
+      list-style:none;
+      display:flex;
+         
+    }
+    &__circle {
+      border-radius:50%;
+      border:;
+      background-color:#fff;
+      width:45px;
+      height:45px; 
+      margin-right:7px;
+      position:relative;
+      z-index:0; 
+      border:@circlecolor;   
+    } 
+    &__lamp {
+      width:17px;
+      height:17px;
+      position:absolute;
+      top:7px;
+      left:12px;
+      animation:gradientradius 1s infinite;
+      border-radius:50%;
+      border:2px solid #3489a0;
+      z-index:20;
+      &::before {
+        content:" ";
+        position:absolute;
+        width:12px;
+        height:13px;
+        background-image:linear-gradient(90deg,#3489a0, #34aed0, #3489a0, #34aed0);
+        top:16px;
+        left:3px;      
+      }  
+      &::after {
+        content:" ";
+        position:absolute;
+        height:10px;
+        width:3px;
+        top:7px;
+        border-left:2px solid @imagecolor;
+        border-right:2px solid @imagecolor;
+      }  
+    } 
+    &__arrow {
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      position:absolute;
+      top:-11px;
+      left:8px;
+      border-bottom-color:@imagecolor;
+      z-index:20;
+      &::before {
+        content:" ";
+        position:absolute;
+        width:26px;
+        height:2px;
+        background:@imagecolor;
+        top:19px;
+        left:-13px;      
+      }  
+      &::after {
+        content:" ";
+        position:absolute;
+        width:26px;
+        height:2px;
+        background:@imagecolor;
+        top:24px;
+        left:-13px; 
+      }  
+    }
+    &__phone {
+      width:21px;
+      height:30px;
+      position:absolute;
+      /*background-image:linear-gradient(to left top,#34efd0, #fefefe, #34efd0, #fefefe,#34efd0, #fefefe, #34efd0, #fefefe);*/
+      top:7px;
+      left:10px;
+      border-radius:2px;
+      border:2px solid @imagecolor;
+      z-index:20;
+      animation:gradientline 1s infinite;
+      &::before {
+        content:" ";
+        position:absolute;
+        width:7px;
+        height:7px;
+        border-radius:50%;
+        border:2px solid @imagecolor;
+        background:#ababab;
+        top:21px;
+        left:4px;    
+        z-index:40;  
+      }  
+      &::after {
+        content:" ";
+        position:absolute;
+        height:9px;
+        width:21px;
+        top:20px;
+        left:0;
+        z-index:30;
+        border-top:2px solid @imagecolor;
+        background:@imagecolor;
+      }  
+    } 
   }         
 }
 
@@ -152,14 +266,30 @@ footer{
     flex-direction:column;
     logo{
       border-bottom: 1px solid darken(@logocolor,20);
-     } 
+    } 
     ul{
-    flex-direction:column;
-        li{
-           border-left:none;
-           font-size:16pt;
-         } 
+      flex-direction:column;
+      li{
+        border-left:none;
+        font-size:16pt;
+      } 
     }
   }
 }
 
+@keyframes gradientline {
+   0%{
+     background:linear-gradient(to left top,#34efd0, #fefefe, #34efd0, #fefefe,#34efd0, #fefefe, #34efd0, #fefefe);   
+   }
+   100%{
+     background:linear-gradient(to left top, #fefefe, #34efd0, #fefefe,#34efd0, #fefefe, #34efd0, #fefefe,#34efd0);   
+   }
+}
+@keyframes gradientradius {
+   0%{
+     background:radial-gradient(#34efd0, #fefefe, #34efd0, #fefefe,#34efd0, #fefefe, #34efd0, #fefefe);   
+   }
+   100%{
+     background:radial-gradient( #fefefe, #34efd0, #fefefe,#34efd0, #fefefe, #34efd0, #fefefe,#34efd0);   
+   }
+}

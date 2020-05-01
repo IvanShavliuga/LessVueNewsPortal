@@ -6,7 +6,14 @@ aside.aside
       a(:href="link" target="_blank") {{user.login}}
     p.profile__info {{user.age}}, {{user.country}} {{user.city}}
     p.profile__info {{user.email}}
- 
+  div.images
+    ul.images__list
+      li.images__circle 
+        div.images__lamp &nbsp;
+      li.images__circle 
+        div.images__arrow &nbsp;
+      li.images__circle 
+        div.images__phone &nbsp;
 </template>
 <script>
 export default {
