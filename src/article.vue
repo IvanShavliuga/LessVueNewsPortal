@@ -4,11 +4,11 @@ article
     div {{post.id}}
   h4 {{post.title}}
   p {{post.desc}} 
-   .newsstat
-     span просмотров {{post.view}}
-     span мне нравится {{post.like}}
-     span коментариев {{post.comments}}
-     span репостов {{post.repost}}
+  p.newsstat
+    span просмотров {{post.view}}
+    span мне нравится {{post.like}}
+    span коментариев {{post.comments}}
+    span репостов {{post.repost}}
 </template>
 <script>
 export default {
