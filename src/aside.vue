@@ -3,7 +3,7 @@ aside.aside
   div.profile(:data-id="user.login+'_'+user.id")
     h4.profile__header  {{user.name}}
     p.profile__login 
-      a(:href="link" target="_blank") {{user.login}}
+      a(:href="user.link" target="_blank") {{user.login}}
     p.profile__info {{user.age}}, {{user.country}} {{user.city}}
     p.profile__info {{user.email}}
   div.images

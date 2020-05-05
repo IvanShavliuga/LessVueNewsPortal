@@ -1,29 +1,22 @@
 <template lang="pug">
 article 
   .picture
-    div {{post.id}}
+    div {{post.id+1}}
   h4 {{post.title}}
   p {{post.desc}} 
   p.newsstat
-    span просмотров {{post.view}}
-    span мне нравится {{post.like}}
-    span коментариев {{post.comments}}
-    span репостов {{post.repost}}
+    span просмотров {{post.views.length}}
+    span мне нравится {{post.like.length}}
+    span коментариев {{post.comments.length}}
+    span репостов {{post.repost.length}}
 </template>
 <script>
 export default {
-  data() {
-    return {
-      post: {
-        id:0,
-        title:'Title',
-        desc:"Здесь должна быть новость вашего портала. Здесь должна быть новость вашего портала. Здесь должна быть новость вашего портала.  Здесь должна быть новость вашего портала. ",
-        like:20,
-        comments:3,
-        repost:12,
-        view:300      
-      }    
-    }  
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
