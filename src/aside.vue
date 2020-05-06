@@ -4,8 +4,8 @@ aside.aside
     h4.profile__header  {{user.name}}
     p.profile__login 
       a(:href="user.link" target="_blank") {{user.login}}
-    p.profile__info {{user.age}}, {{user.country}} {{user.city}}
-    p.profile__info {{user.email}}
+    p.profile__info {{user.age}},  {{user.city}}
+    p.profile__info {{user.spec}}
   div.images
     ul.images__list
       li.images__circle 
@@ -14,21 +14,18 @@ aside.aside
         div.images__arrow &nbsp;
       li.images__circle 
         div.images__phone &nbsp;
+  div.contacts
+    ul.contacts__list
+      li.contacts__item(v-for="(c,key) in user.contacts" :key="key")
+        div.contacts__name {{c.messenger}}
+        div.contacts__contact {{c.contact}}
 </template>
 <script>
 export default {
-  data() {
-    return {
-      user: {
-        login:"IvanShavliuga",
-        link:"https://github.com/IvanShavliuga",
-        email:"iva.drakon.nov@gmail.com",
-        name:"Ivan Shavliuga",
-        age:31,
-        city:"Novopolotsk",
-        country:"Belarus",
-        id:0      
-      }    
+  props: {
+    user: {
+      type: Object,
+      required:true
     }  
   }
 }
