@@ -118,7 +118,7 @@ header{
   background-color:#dedede;
   border-right:1px solid #cdcdcd;
   .profile {
-    padding:15px;
+    margin:15px;
     &__header {
       font-size:25px;
       letter-spacing:2px;
@@ -143,12 +143,11 @@ header{
     }   
   }
   .images {
-    margin-top:15px;
-    padding:15px;
+    margin:15px;
     &__list {
       list-style:none;
       display:flex;
-         
+      justify-content: space-around;  
     }
     &__circle {
       border-radius:50%;
@@ -257,6 +256,36 @@ header{
         background:@imagecolor;
       }  
     } 
+  }
+  .contacts {
+    margin:15px;
+    
+    &__list {
+      margin: 0;
+           
+    } 
+    &__item {
+      list-style:none;
+      margin:15px 5px;
+      font-size:15px;
+      
+    }
+    &__name {
+      color:@infocolor;
+      display:inline-block;
+      width:100px;
+    }
+    &__contact {
+      display:inline-block;
+      color:darken(spin(@profilecolor,70),20%);
+      text-decoration:none;
+      cursor:pointer;
+      &:hover {
+        color:spin(@profilecolor,70);        
+      }
+    }    
+    
+    
   }         
 }
 
@@ -272,7 +301,7 @@ footer{
   header{
     flex-direction:column;
     logo{
-      border-bottom: 1px solid darken(@logocolor,20);
+      border-bottom: 1px dashed darken(@logocolor,20);
     } 
     ul{
       flex-direction:column;

@@ -9,7 +9,7 @@ div#appindex(data-id="appindex")
         li=item
   .promohead This is my work. New version 1.2.0. {{status}}
   main 
-    appaside
+    appaside(:user="$store.getters.user")
     .content
       apparticle(v-for="(p,key) in $store.getters.postsAll" :key="key" :post="p") 
   footer  Это портфолио Ивана Иванова (Шавлюги) Использую flexbox и LESS
