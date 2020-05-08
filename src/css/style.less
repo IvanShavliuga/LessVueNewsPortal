@@ -10,7 +10,7 @@
 @circlecolor:7px solid #3489a0;
 @imagecolor:#3489a0;
 @iconcolor:#56b8af;
-header{
+.header{
   background-color:@headercolor;
   height: auto;
   display:flex;
@@ -28,7 +28,7 @@ header{
       color:spin(@logocolor,70);
     }
   }
-  ul{
+  &__menu{
     list-style:none;
     display:flex;
     padding:10px;
@@ -43,7 +43,49 @@ header{
       
     }
   }
- 
+  &__link {
+    margin-bottom:3px;
+    margin-right:15px;
+    a {
+      color:darken(spin(@profilecolor,70),20%);
+      font-size:15px;
+      text-decoration:none;
+      cursor:pointer;
+      &:hover {
+        color:spin(@profilecolor,70);        
+      }
+    }
+    &:first-letter {
+      text-transform:uppercase;
+      color:lighten(spin(@profilecolor,70),20%);
+      font-size:18px;
+      font-weight:bold;
+	   /*font-size: 2em;
+	   margin-right: 2px; 
+	   color: #EE9966;
+	   font-weight: bold;
+	   text-shadow: -1px -1px 1px white, 1px 1px 1px #9E9D99;*/
+	 }
+	 &:last-child {
+      position:absolute;
+      right:10px;
+      top:0;
+      text-align:right;
+	 }
+  }
+  &__navbar {
+    margin:0;  
+    width:100%;
+    height:25px;
+    background:#232323;  
+  }  
+  &__nav {
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    position:relative;
+  }
+  
 }
  .promohead{
     background-color:darken(@headercolor,50%);
@@ -138,10 +180,12 @@ header{
           color:spin(@profilecolor,70);        
         }
       }    
-    } 
+    }
+     
     &__info {
       color:@infocolor;    
-    }   
+    } 
+    
   }
   .images {
     margin:15px;
@@ -370,7 +414,7 @@ header{
   color:@iconcolor; 
   font-size:16px;
   &__men {
-    color:#347efe; 
+    color:#34ffff; 
     font-size:25px; 
     margin:3px;
   }
@@ -378,6 +422,12 @@ header{
     color:#fe3470;
     font-size:25px;
     margin:3px;  
+  }
+  &__login {
+    color:#de67ed;
+    font-weight:bold;
+    font-size:15px;
+    margin:0;  
   }
 }
 
