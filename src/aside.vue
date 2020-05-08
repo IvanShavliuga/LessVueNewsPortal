@@ -23,7 +23,21 @@ aside.aside
           i(v-if="c.messenger=='email'").fa.fa-envelope.icon.icon__email
           i(v-if="c.messenger=='telegram'").fab.fa-telegram.icon.icon__telegram 
           span {{c.messenger}}
-        div.contacts__contact {{c.contact}}
+        div.contacts__contact {{c.contact}}   
+  div.skills
+    ul.skills__list
+      li(v-for="(s,k) in user.skills" :key="k").skills__text {{s}} 
+  div.friends
+    ul.friends__list
+      li(v-for="(f,k) in friends" :key="k").friends__item 
+        div.friends__circle 
+          div.friends__icon.fa.fa-user
+          i(v-if="f.gender=='men'").friends__gender.fa.fa-mars.icon.icon__men
+          i(v-if="f.gender=='women'").friends__gender.fa.fa-venus.icon.icon__women 
+        div.friends__name
+          span {{f.name}}
+        div.friends__login @{{f.login}} 
+        div.friends__spec {{f.spec}}  
 </template>
 <script>
 export default {
@@ -31,7 +45,11 @@ export default {
     user: {
       type: Object,
       required:true
-    }  
+    },  
+    friends: {
+      type:Array,
+      required:true    
+    }
   }
 }
 </script>
