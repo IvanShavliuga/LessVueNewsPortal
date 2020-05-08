@@ -7,6 +7,7 @@ aside.aside
       a(:href="user.link" target="_blank") {{user.login}}
     p.profile__info {{user.age}},  {{user.city}}
     p.profile__info {{user.spec}}
+      
   div.images
     ul.images__list
       li.images__circle 
@@ -36,7 +37,9 @@ aside.aside
           i(v-if="f.gender=='women'").friends__gender.fa.fa-venus.icon.icon__women 
         div.friends__name
           span {{f.name}}
-        div.friends__login @{{f.login}} 
+        div.friends__login 
+          i.fa.fa-at.icon.icon__login
+          span {{f.login}} 
         div.friends__spec {{f.spec}}  
 </template>
 <script>
@@ -49,7 +52,11 @@ export default {
     friends: {
       type:Array,
       required:true    
-    }
+    }/*,
+    groups: {
+      type:Array,
+      required:true    
+    }*/
   }
 }
 </script>
