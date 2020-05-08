@@ -9,6 +9,7 @@
 @infocolor:#3489ab;
 @circlecolor:7px solid #3489a0;
 @imagecolor:#3489a0;
+@iconcolor:#5678af;
 header{
   background-color:@headercolor;
   height: auto;
@@ -273,7 +274,7 @@ header{
     &__name {
       color:@infocolor;
       display:inline-block;
-      width:100px;
+      width:130px;
     }
     &__contact {
       display:inline-block;
@@ -288,7 +289,16 @@ header{
     
   }         
 }
-
+.icon {
+  margin:10px; 
+  color:@iconcolor; 
+  &__user {   
+    filter:invert(100%);  
+  }
+  &__phone {
+     
+  }
+}
 footer{
   background-color:black;
   color:darken(@logocolor,20);
