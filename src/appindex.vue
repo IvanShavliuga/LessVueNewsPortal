@@ -31,10 +31,10 @@ div#appindex(data-id="appindex")
     span.promohead__time {{time.hour}} : {{time.minute}} : {{time.second}} 
     span.promohead__weather
       i.fas.fa-sun.icon.icon__weather 
-      span.promohead__temperature 13&#8451;
+      span.promohead__temperature 13 &#8451;
     span.promohead__news {{news}}
   main 
-    appaside(:user="$store.getters.user", :friends="$store.getters.friends")
+    appaside(:user="$store.getters.user", :friends="$store.getters.friends", :cards="$store.getters.cards")
     .content
       apparticle(v-for="(p,key) in $store.getters.postsAll" :key="key" :post="p") 
   footer  Это портфолио Ивана Иванова (Шавлюги) Использую flexbox и LESS

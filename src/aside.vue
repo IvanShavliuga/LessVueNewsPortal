@@ -35,12 +35,28 @@ aside.aside
           div.friends__icon.fa.fa-user
           i(v-if="f.gender=='men'").friends__gender.fa.fa-mars.icon.icon__men
           i(v-if="f.gender=='women'").friends__gender.fa.fa-venus.icon.icon__women 
-        div.friends__name
+        h3.friends__name
           span {{f.name}}
-        div.friends__login 
+        h4.friends__login 
           i.fa.fa-at.icon.icon__login
           span {{f.login}} 
-        div.friends__spec {{f.spec}}  
+        div.friends__spec {{f.spec}}
+        div.friends__link
+          a(href="#") read more 
+  div.cards
+    ul.cards__list
+      li(v-for="(crd,k) in cards" :key="k").cards__item 
+        div.cards__block
+          h3.cards__title {{crd.header}}
+          div.cards__image
+            i.fas.fa-laptop-code.icon.icon__cards
+          p.cards__text {{crd.body}}
+          p.cards__date
+            i.fa.fa-clock.icon.icon__watch 
+            span {{crd.date}}
+            span.cards__status in process 
+          .cards__link 
+            a(href="#") read more
 </template>
 <script>
 export default {
@@ -52,11 +68,11 @@ export default {
     friends: {
       type:Array,
       required:true    
-    }/*,
-    groups: {
+    },
+    cards: {
       type:Array,
       required:true    
-    }*/
+    }
   }
 }
 </script>
