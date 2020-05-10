@@ -28,6 +28,27 @@ aside.aside
   div.skills
     ul.skills__list
       li(v-for="(s,k) in user.skills" :key="k").skills__text {{s}} 
+  div.cards
+    ul.cards__list
+      li(v-for="(crd,k) in cards" :key="k").cards__item 
+        div.cards__block
+          h3.cards__title {{crd.header}}
+          div.cards__image
+            i.fas.fa-laptop-code.icon.icon__cards
+          p.cards__text {{crd.body}}
+          .cards__link 
+            a(href="#") read more
+          p.cards__date
+            i.fa.fa-clock.icon.icon__watch 
+            span {{crd.date}}
+            span.cards__status in process 
+  div.groups
+    ul.groups__list
+      li(v-for="(grp,k) in groups" :key="k").groups__item
+        h3.groups__name 
+          i(v-if="iduser===grp.idAdmin").fa.fa-user-secret.icon.icon__admin
+          i(v-else).far.fa-newspaper.icon.icon__group
+          span {{grp.name}}
   div.friends
     ul.friends__list
       li(v-for="(f,k) in friends" :key="k").friends__item 
@@ -42,21 +63,7 @@ aside.aside
           span {{f.login}} 
         div.friends__spec {{f.spec}}
         div.friends__link
-          a(href="#") read more 
-  div.cards
-    ul.cards__list
-      li(v-for="(crd,k) in cards" :key="k").cards__item 
-        div.cards__block
-          h3.cards__title {{crd.header}}
-          div.cards__image
-            i.fas.fa-laptop-code.icon.icon__cards
-          p.cards__text {{crd.body}}
-          p.cards__date
-            i.fa.fa-clock.icon.icon__watch 
-            span {{crd.date}}
-            span.cards__status in process 
-          .cards__link 
-            a(href="#") read more
+          a(href="#") read more
 </template>
 <script>
 export default {
@@ -71,6 +78,14 @@ export default {
     },
     cards: {
       type:Array,
+      required:true    
+    },
+    groups: {
+      type: Array,
+      required:true    
+    },
+    iduser: {
+      type: Number,
       required:true    
     }
   }

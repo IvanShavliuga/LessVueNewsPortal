@@ -1,9 +1,11 @@
 <template lang="pug">
 div#appindex(data-id="appindex")
-  - var items = ['Главная','Наука','Технологии','Программирование','Тесты']
+  - var items = ['Главная','Наука','Технологии','Код']
   header.header
     .logo IT
       span NEWS
+      i.fab.fa-less.icon.icon__tech 
+      i.fab.fa-vuejs.icon.icon__tech
     ul.header__menu
       each item in items
         li=item
@@ -34,16 +36,19 @@ div#appindex(data-id="appindex")
       span.promohead__temperature 13 &#8451;
     span.promohead__news {{news}}
   main 
-    appaside(:user="$store.getters.user", :friends="$store.getters.friends", :cards="$store.getters.cards")
+    appaside(:user="$store.getters.user", 
+      :friends="$store.getters.friends", 
+      :cards="$store.getters.cards", 
+      :groups="$store.getters.groupsUser"
+      :iduser="$store.getters.loginid")
     .content
       apparticle(v-for="(p,key) in $store.getters.postsAll" :key="key" :post="p") 
-  footer  Это портфолио Ивана Иванова (Шавлюги) Использую flexbox и LESS
-
+  appfooter
 </template>
 <script>
 import article from './article';
 import aside from './aside';
-
+import footer from './footer';
 export default {
   data() {
     return {
@@ -78,7 +83,8 @@ export default {
   },
   components: {
     apparticle:article,  
-    appaside:aside
+    appaside:aside,
+    appfooter:footer
   }
 }
 </script>
