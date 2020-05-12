@@ -1,34 +1,6 @@
 <template lang="pug">
 div#appindex(data-id="appindex")
-  - var items = ['Главная','Наука','Технологии','Код']
-  header.header
-    .logo IT
-      span NEWS
-      i.fab.fa-less.icon.icon__tech 
-      i.fab.fa-vuejs.icon.icon__tech
-    ul.header__menu
-      each item in items
-        li=item
-    div.header__navbar
-      ul.header__nav
-        li.header__link
-          a(href="#" target="_blank") Profile
-        li.header__link
-          a(href="#" target="_blank") news
-        li.header__link
-          a(href="#" target="_blank") friends
-        li.header__link
-          a(href="#" target="_blank") groups
-        li.header__link
-          a(href="#" target="_blank") messages
-        li.header__link
-          a(href="#" target="_blank") comments
-        li.header__link
-          a(href="#" target="_blank") cards
-        li.header__link
-          a(href="#" target="_blank") settings
-        li.header__link
-          a(href="#" target="_blank") log out
+  appheader
   .promohead
     span.promohead__time {{time.hour}} : {{time.minute}} : {{time.second}} 
     span.promohead__weather
@@ -46,6 +18,7 @@ div#appindex(data-id="appindex")
   appfooter
 </template>
 <script>
+import header from './header'
 import article from './article';
 import aside from './aside';
 import footer from './footer';
@@ -82,6 +55,7 @@ export default {
     setTimeout(()=>{this.now()},1000);
   },
   components: {
+    appheader:header,
     apparticle:article,  
     appaside:aside,
     appfooter:footer
