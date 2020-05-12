@@ -14,11 +14,13 @@ div#appindex(data-id="appindex")
       :groups="$store.getters.groupsUser"
       :iduser="$store.getters.loginid")
     .content
+      appalert(:alert="$store.getters.alert", :users="$store.getters.users")
       apparticle(v-for="(p,key) in $store.getters.postsAll" :key="key" :post="p") 
   appfooter
 </template>
 <script>
-import header from './header'
+import header from './header';
+import alert from './alert';
 import article from './article';
 import aside from './aside';
 import footer from './footer';
@@ -56,6 +58,7 @@ export default {
   },
   components: {
     appheader:header,
+    appalert:alert,
     apparticle:article,  
     appaside:aside,
     appfooter:footer

@@ -1,5 +1,5 @@
 <template lang="pug">
-- var items = ['Главная','Наука','Технологии','Код']
+- var items = ['Главная','Наука','Технологии','Код', "Вебинары", "Группы"]
 header.header
   div.header__banner 
     h1.header__title

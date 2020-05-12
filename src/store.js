@@ -363,7 +363,9 @@ export default new Vuex.Store({
         alert: {
              header: "Test",
              body:"On debug mode. Testing repost and like",
-             status:"Test processing"              
+             status:"Test processing version 1.3.2",
+             userId:0,
+             date:"12.05.2020 14:54:36"              
         },
         groups:[{
              name: "Vue.js",

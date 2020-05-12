@@ -652,7 +652,7 @@
     color:#9f9f9f;  
   }
   &__tech {
-    color:#aea84e;
+    color:darken(@logocolor,20);;
     font-size:@fontsizemenu;
     margin:0;  
   }
@@ -661,8 +661,64 @@
     font-size:20px;
     margin:5px;      
   }
+  &__alert {
+    font-size:45px;
+    color: #d89840; 
+  }
 }
-
+.alert {
+  width:100%;
+  padding:15px 25px;
+  margin:15px 25px;
+  position:relative;
+  border:1px dotted #d598a3;
+  background-color:rgba(200,90,235,0.2);
+  &__header {
+    color:#f45427;
+    font-size:25px;
+    font-weight:normal;
+    text-align:left;
+    
+  }
+  &__text {
+    height:70px;
+    color:#234367;  
+  }
+  &__status {
+    border-top:1px solid #fff;
+    margin-top:5px;
+    padding-top:5px;  
+  }
+  &__index {
+    color:#2f5;  
+  }
+  &__date {
+    color:#555;
+    float:right;  
+  }
+  &__user {
+    color:#ff9;
+    font-weight:bold;
+    font-size:20px; 
+    margin-right:10px; 
+  }
+  &__image {
+    border-radius:50%;
+    background-color:#fff;
+    width:45px;
+    height:45px; 
+    margin-right:7px;
+    position:relative;
+    z-index:0; 
+    border:@circlecolor; 
+    filter:grayscale(70%);
+    float:left;
+    &:hover {
+      filter:none;
+      transition:0.7s;      
+    }
+  }
+}
 footer{
   background-color:black;
   color:darken(@logocolor,20);
