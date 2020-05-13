@@ -365,6 +365,7 @@ export default new Vuex.Store({
              body:"On debug mode. Testing repost and like",
              status:"Test processing version 1.3.2",
              userId:0,
+             read:false,
              date:"12.05.2020 14:54:36"              
         },
         groups:[{
@@ -568,7 +569,11 @@ export default new Vuex.Store({
         },
         signup({commit},user){
             commit("SIGNUP",user);        
+        },
+        readalert({commit},alert) {
+            commit("READALERT",alert);        
         }
+        
            
     },
     mutations: {
@@ -661,6 +666,9 @@ export default new Vuex.Store({
             show:false 
            };
            state.messages.push(msg);        
+        },
+        "READALERT" (state,alert) {
+           state.alert.read=true;
         }        
            
     }
