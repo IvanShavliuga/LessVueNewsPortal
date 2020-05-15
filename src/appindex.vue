@@ -12,8 +12,9 @@ div#appindex(data-id="appindex")
       :friends="$store.getters.friends", 
       :cards="$store.getters.cards", 
       :groups="$store.getters.groupsUser"
-      :iduser="$store.getters.loginid")
+      :iduser="$store.getters.loginid")   
     .content
+      appcode   
       appalert(:alert="$store.getters.alert", :users="$store.getters.users")
       apparticle(v-for="(p,key) in $store.getters.postsAll" :key="key" :post="p") 
   appfooter
@@ -24,6 +25,7 @@ import alert from './alert';
 import article from './article';
 import aside from './aside';
 import footer from './footer';
+import code from './code';
 export default {
   data() {
     return {
@@ -61,7 +63,8 @@ export default {
     appalert:alert,
     apparticle:article,  
     appaside:aside,
-    appfooter:footer
+    appfooter:footer,
+    appcode:code
   }
 }
 </script>
