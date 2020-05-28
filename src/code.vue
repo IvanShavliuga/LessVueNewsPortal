@@ -1,32 +1,49 @@
 <template lang="pug">
-article.code
-  div(v-if="code.src==='codepen'", :data-id="code.id").code__codepen
-    p(data-height="265",
-      data-theme-id="light",
-      data-default-tab="result",
-      data-user="ivanshavliuga",
-      data-slug-hash="WYzWEK",
-      style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;",
-      data-pen-title="ITNEWS. ").codepen
-      span See the Pen 
-        a(href="https://codepen.io/ivanshavliuga/pen/WYzWEK") ITNEWS
-        a(href="https://codepen.io/ivanshavliuga") by Ivan Shavliuga 
-        a(href="https://codepen.io") CodePen 
-  div(v-if="code.src==='github'", :data-id="code.id").code__github
-  div(v-else, :data-id="code.id").code__otherlink
+div.code
+  div(v-for="(src,key) in code.src").code__list
+    article(v-if="src==='codepen'", :data-id="code.id").code__codepen
+      p(data-height="265",
+        data-theme-id="light",
+        data-default-tab="result",
+        data-user="ivanshavliuga",
+        data-slug-hash="WYzWEK",
+        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;",
+        data-pen-title="ITNEWS. ").codepen
+        span See the Pen 
+          a(:href="code.link[key]") ITNEWS
+          a(:href="code.profile[key]") by Ivan Shavliuga 
+          a(href="https://codepen.io") CodePen 
+      p.code__codepen__block
+        h3.code__title 
+      appstaticpost
+    article(v-else-if="src==='github'", :data-id="code.id").code__github__block
+      p.code__github
+        div.code__github__image 
+          a(:href="code.link[key]", title)
+            i.fab.fa-github.icon.icon__code
+        h3.code__title {{code.title}} 
+        p.code__profile {{code.profile[key]}}
+        appstaticpost
+    article(v-else, :data-id="code.id").code__otherlink
+      p.code__linkcode
+        div.code__linkcode__image
+          a(:href="code.link[key]")
+            i.fas.fa-code.icon.icon__code
+        h3.code__title {{code.title}}
+        p.code__profile {{code.profile[key]}} 
+        appstaticpost
 </template>
 <script>
+import staticpost from './staticpost';
 export default {
-  data() {
-    return {
+  props: {
       code: {
-        src:'codepen',
-        id:0,
-        link:'https://codepen.io/ivanshavliuga/pen/WYzWEK'      
-      }
-      
-      
-    }  
+        type: Object,
+        required:true      
+      }  
+  },
+  components: {
+    appstaticpost:staticpost  
   }
 
 }

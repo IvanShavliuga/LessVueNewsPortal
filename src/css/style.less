@@ -172,7 +172,11 @@
     flex:1;
     text-align:center;
     p{
-      padding:10px;     
+      padding:10px;  
+        
+    }
+    .post__desc {
+      height:150px;
     }
 	 .picture {
 		  margin:20px auto;
@@ -665,6 +669,9 @@
     font-size:45px;
     color: #d89840; 
   }
+  &__code {
+    font-size:200px;
+  }
 }
 .alert {
   width:100%;
@@ -739,6 +746,51 @@
     padding: 6px 15px;
     border-radius:10px;
     font-size:15px;  
+  }
+}
+.code {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+ 
+   &__github__block {
+      height:305px;    
+      
+   }
+   &__image {
+     height:100px;
+     width:100px; 
+     border:none;
+     outline:none; 
+   }
+}
+.user {
+  border:1px dotted #fb89a9;
+  width:300px;
+  background-color:#fefefe;
+  padding:15px;
+  &__header {
+    font-size: 16px;
+    letter-spacing:1px;
+    color:#5678ba;  
+  } 
+  &__skills {
+    &__item {
+      list-style:none;
+      color:#db76a9;
+      display:inline-block;
+      margin-right:10px    
+    }
+  }
+  &__contacts {
+    &__item {
+      color:#3498aa;
+      list-style:none; 
+      p {
+        display:inline-block;
+        margin-right:10px;    
+      }   
+    }  
   }
 }
 footer{
