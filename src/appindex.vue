@@ -7,14 +7,15 @@ div#appindex(data-id="appindex")
       i.fas.fa-sun.icon.icon__weather 
       span.promohead__temperature 13 &#8451;
     span.promohead__news {{news}}
-  main 
+  main    
     appaside(:user="$store.getters.user", 
       :friends="$store.getters.friends", 
       :cards="$store.getters.cards", 
       :groups="$store.getters.groupsUser"
       :iduser="$store.getters.loginid")   
     .content
-      appcode   
+      appuser(:user="$store.getters.user")
+      appcode(v-for="(c,k) in $store.getters.codes" :code="c", :key="k+100")   
       appalert(:alert="$store.getters.alert", :users="$store.getters.users")
       apparticle(v-for="(p,key) in $store.getters.postsAll" :key="key" :post="p") 
   appfooter
@@ -26,6 +27,7 @@ import article from './article';
 import aside from './aside';
 import footer from './footer';
 import code from './code';
+import user from './user';
 export default {
   data() {
     return {
@@ -64,7 +66,8 @@ export default {
     apparticle:article,  
     appaside:aside,
     appfooter:footer,
-    appcode:code
+    appcode:code,
+    appuser:user
   }
 }
 </script>

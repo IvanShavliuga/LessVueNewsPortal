@@ -441,9 +441,44 @@ export default new Vuex.Store({
              idNews:[3],
              followers:[0,4]        
         }],
+        codes: [{
+          src:['codepen','github'],
+          id:0,
+          link:['https://codepen.io/ivanshavliuga/pen/WYzWEK', 'https://github.com/IvanShavluiga/LessVueNewsPortal'],
+          profile:["https://codepen.io/ivanshavliuga",'https://github.com/IvanShavluiga'],
+          title: "IT NEWS",
+          version: "1.3.2",
+          like:[1,2,3],
+          repost:[1,2,3],
+          comments:[],
+          views:[1,2,3]      
+        },{
+          src:['github'],
+          id:0,
+          link:['https://github.com/IvanShavluiga/vuejstimer'],
+          profile:['https://github.com/IvanShavluiga'],
+          title: "vue.js timer",
+          version: "1.3.2",
+          like:[1,2,3],
+          repost:[1,2,3],
+          comments:[],
+          views:[1,2,3]      
+        },{
+          src:['github'],
+          id:0,
+          link:['https://github.com/IvanShavluiga/vuejsnews'],
+          profile:['https://github.com/IvanShavluiga'],
+          title: "vue.js news",
+          version: "1.3.2",
+          like:[1,2,3],
+          repost:[1,2,3],
+          comments:[],
+          views:[1,2,3]      
+        }],
         userloginid:0      
     },
     getters: {
+    	  codes:state =>  {return state.codes},
         users: state => {return state.users},
         loginid: state =>{return state.userloginid},
         messages: state => {return state.messages.filter((m)=>{return m.to==state.userloginid||m.from==state.userloginid})},

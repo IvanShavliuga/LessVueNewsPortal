@@ -3,20 +3,20 @@ article
   .picture
     div {{post.id+1}}
   h4 {{post.title}}
-  p {{post.desc}} 
-  p.newsstat
-    span просмотров {{post.views.length}}
-    span мне нравится {{post.like.length}}
-    span коментариев {{post.comments.length}}
-    span репостов {{post.repost.length}}
+  p.post__desc {{post.desc}} 
+  appstaticpost(:like="post.like" :views="post.views" :comments="post.comments" :repost="post.repost")
 </template>
 <script>
+import staticpost from './staticpost';
 export default {
   props: {
     post: {
       type: Object,
       required: true
     }
+  },
+  components: {
+    appstaticpost:staticpost  
   }
 }
 </script>
