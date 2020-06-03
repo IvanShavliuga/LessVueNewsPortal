@@ -475,9 +475,44 @@ export default new Vuex.Store({
           comments:[],
           views:[1,2,3]      
         }],
+        books:[{
+        	 id:0,
+        	 userId:0,
+        	 title:"Лучшие фельетоны и шутки",
+        	 author:"Михаил Жванецкий",
+        	 desc:"Лучшие фельетоны и шутки",
+        	 cat:["Юмор"],
+        	 like:[1,2,3],
+          repost:[1,2,3],
+          comments:[],
+          views:[1,2,3]  
+        },{
+        	 id:1,
+        	 userId:1,
+        	 title:"Лучшие фельетоны и шутки",
+        	 author:"Михаил Задорнов",
+        	 cat:["Юмор"],
+        	 desc:"Лучшие фельетоны и шутки",
+        	 like:[1,2,3],
+          repost:[1,2,3],
+          comments:[],
+          views:[1,2,3]  
+        },{
+        	 id:2,
+        	 userId:1,
+        	 title:"Таблица кодов",
+        	 author:"Алексей Инфонтов",
+        	 cat:[],
+        	 desc:"Таблица кодов",
+        	 like:[1,2,3],
+          repost:[1,2,3],
+          comments:[],
+          views:[1,2,3]  
+        }],
         userloginid:0      
     },
     getters: {
+    	  books:state => {return state.books},
     	  codes:state =>  {return state.codes},
         users: state => {return state.users},
         loginid: state =>{return state.userloginid},
