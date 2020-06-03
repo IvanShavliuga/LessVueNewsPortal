@@ -15,8 +15,7 @@ div.user(:data-id="user.login+'_'+user.id")
     ul.user__contacts__list
       li.user__contacts__item(v-for="(c,k) in user.contacts" :key="k+200")
         p.user__contacts__messenger {{c.messenger}}
-        p.user__contacts__contact {{c.contact}}
-   
+        p.user__contacts__contact {{c.contact}}   
 </template>
 <script>
 export default {

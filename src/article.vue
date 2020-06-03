@@ -1,5 +1,5 @@
 <template lang="pug">
-article 
+article.post 
   .picture
     div {{post.id+1}}
   h4 {{post.title}}

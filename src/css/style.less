@@ -168,6 +168,7 @@
     border: 1px solid black;
     min-width:350px;
     max-width:350px;
+    
     background-color:#fff;
     flex:1;
     text-align:center;
@@ -207,16 +208,21 @@
 		}
     .newsstat{
       color:darken(@logocolor,20);
-      padding:10px;
+      padding:4px;
       border-top:1px dashed darken(@logocolor,20);
       background:lighten(@logocolor,43%);
       span{
         padding-left:6px;
+        font-weight:bold;
       }
       
     }
   }
   
+}
+.post {
+  max-height:595px;
+  min-height:595px;
 }
 .aside {
   background-color:#dedede;
@@ -672,11 +678,37 @@
   &__code {
     font-size:200px;
   }
+  &__book {
+    font-size:180px;
+    color:#df89a0;  
+  }
+}
+.book {
+  width:220px;
+  max-height:385px!important;
+  min-height:385px!important;
+  &__image {    
+    text-align:center;  
+  }
+  &__author {
+    color:@infocolor;  
+  }
+  &__catno {
+    color:#dfa056;  
+  }
+  &__cat {
+    color:@infocolor;
+    font-size:14px;
+    &__item {
+      list-style:none;
+      font-weight:bold;         
+    }
+  }
 }
 .alert {
   width:100%;
   padding:15px 25px;
-  margin:15px 25px;
+  margin:35px 25px;
   position:relative;
   border:1px dotted #d598a3;
   background-color:rgba(200,90,235,0.2);
@@ -752,14 +784,12 @@
   display:flex;
   flex-wrap:wrap;
   justify-content:space-around;
- 
-   &__github__block {
-      height:305px;    
-      
-   }
+  max-height:270px!important;
+  min-height:270px!important;
+  margin:60px 0; 
    &__image {
-     height:100px;
-     width:100px; 
+     height:80px;
+     width:80px; 
      border:none;
      outline:none; 
    }
@@ -792,6 +822,12 @@
       }   
     }  
   }
+}
+.page {
+  display:flex;
+  flex-wrap:wrap;
+  padding:0;
+  margin:10px;
 }
 footer{
   background-color:black;
