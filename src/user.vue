@@ -1,5 +1,9 @@
 <template lang="pug">
 div.user(:data-id="user.login+'_'+user.id")
+  div.user__circle 
+    div.user__icon.fa.fa-user
+    i(v-if="user.gender=='men'").user__gender.fa.fa-mars.icon.icon__men
+    i(v-if="user.gender=='women'").user__gender.fa.fa-venus.icon.icon__women 
   h4.user__header  {{user.name}}
   p.user__login 
     i.fa.fa-id-badge.icon.icon__user 
