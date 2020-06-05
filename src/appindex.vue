@@ -14,11 +14,7 @@ div#appindex(data-id="appindex")
       :groups="$store.getters.groupsUser"
       :iduser="$store.getters.loginid")   
     .content
-      appbooks(:books="$store.getters.books")
-      appusers(:users="$store.getters.users")
-      appcodes(:codes="$store.getters.codes")
-      appalerts(:alerts="[$store.getters.alert]", :users="$store.getters.users")
-      appposts(:posts="$store.getters.postsAll")
+      appcontent(:books="$store.getters.books", :codes="$store.getters.codes", :alerts="[$store.getters.alert]", :users="$store.getters.users",:posts="$store.getters.postsAll")
   appfooter
 </template>
 <script>
@@ -30,6 +26,7 @@ import footer from './footer';
 import codes from './codes';
 import users from './users';
 import books from './books';
+import content from './content';
 export default {
   data() {
     return {
@@ -70,7 +67,8 @@ export default {
     appfooter:footer,
     appcodes:codes,
     appusers:users,
-    appbooks:books
+    appbooks:books,
+    appcontent:content
   }
 }
 </script>

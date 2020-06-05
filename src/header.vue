@@ -17,9 +17,11 @@ header.header
       li.header__link
         a(href="#" target="_blank") Profile
       li.header__link
-        a(href="#" target="_blank") news
+        a(href="#" target="_blank") 
+          router-link(to="/") news
       li.header__link
-        a(href="#" target="_blank") friends
+        a(href="#" target="_blank") 
+          router-link(to="/users") users
       li.header__link
         a(href="#" target="_blank") groups
       li.header__link

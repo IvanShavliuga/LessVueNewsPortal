@@ -5,15 +5,15 @@ section.page
 <script>
 import alert from './alert';
 export default {
-  props: {
-    alerts: {
-      type: Array,
-      required: true    
-    },
-    users: {
-      type: Array,
-      required:true
-    }  
+  data()  {
+    return {
+      users:[],
+      alerts:[]    
+    }
+  },
+  created() {
+    this.users=this.$store.getters.users;
+    this.alerts=this.$store.getters.alerts;
   },
   components: {
     appalert:alert  

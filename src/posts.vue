@@ -5,11 +5,13 @@ section.page
 <script>
 import  article from './article';
 export default {
-  props: {
-    posts: {
-      type: Array,
-      required: true    
-    }  
+  data()  {
+    return {
+      posts:[]    
+    }
+  },
+  created() {
+    this.posts=this.$store.getters.postsAll;
   },
   components: {
     apparticle:article  
