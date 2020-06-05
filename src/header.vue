@@ -1,5 +1,5 @@
 <template lang="pug">
-- var items = ['Главная','Наука','Технологии','Код', "Вебинары", "Группы"]
+- var items = [{link:"/",text:"Home"},{link:"/alerts",text:"Alerts"},{link:"/codes",text:"Codes"},{link:"/users",text:"Users"},{link:"/books",text:"Books"}]
 header.header
   div.header__banner 
     h1.header__title
@@ -11,7 +11,8 @@ header.header
       i.fab.fa-less.icon.icon__tech 
       i.fab.fa-vuejs.icon.icon__tech
     each item in items
-      li=item
+      li
+        router-link(to=item.link)=item.text
   div.header__navbar
     ul.header__nav
       li.header__link
