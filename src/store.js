@@ -360,14 +360,14 @@ export default new Vuex.Store({
         	    postId:5,
         	    text:"Good work. Liked it"
         }],
-        alert: {
+        alerts:[{
              header: "Test",
              body:"On debug mode. Testing repost and like",
              status:"Test processing version 1.3.2",
              userId:0,
              read:false,
              date:"12.05.2020 14:54:36"              
-        },
+        }],
         groups:[{
              name: "Vue.js",
              desc: "Courses, code, simples, webinars",
@@ -550,7 +550,7 @@ export default new Vuex.Store({
         	    return pu
         },
         postsAll: state => {return state.posts},
-        alert: state => {return state.alert},
+        alerts: state => {return state.alert},
         groups: state => {return state.groups},
         groupsAdmin: state => {return state.groups.filter((g)=>{return g.idAdmin==state.userloginid})},
         user: state => {return state.users[state.userloginid]},

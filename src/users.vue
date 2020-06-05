@@ -5,11 +5,13 @@ section.page
 <script>
 import user from './user';
 export default {
-  props: {
-    users: {
-      type: Array,
-      required: true    
-    }  
+  data()  {
+    return {
+      users:[]    
+    }
+  },
+  created() {
+    this.users=this.$store.getters.users;
   },
   components: {
     appuser:user  

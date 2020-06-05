@@ -5,11 +5,13 @@ section.page
 <script>
 import book from './book';
 export default {
-  props: {
-    books: {
-      type: Array,
-      required: true    
-    }  
+  data()  {
+    return {
+      users:[]    
+    }
+  },
+  created() {
+    this.books=this.$store.getters.books;
   },
   components: {
     appbook:book  

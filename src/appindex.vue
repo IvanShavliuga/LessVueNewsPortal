@@ -14,22 +14,19 @@ div#appindex(data-id="appindex")
       :groups="$store.getters.groupsUser"
       :iduser="$store.getters.loginid")   
     .content
-      appbooks(:books="$store.getters.books")
-      appusers(:users="$store.getters.users")
-      appcodes(:codes="$store.getters.codes")
-      appalerts(:alerts="[$store.getters.alert]", :users="$store.getters.users")
-      apparticle(v-for="(p,key) in $store.getters.postsAll",:key="key",:post="p")
+      appcontent(:books="$store.getters.books", :codes="$store.getters.codes", :alerts="[$store.getters.alert]", :users="$store.getters.users",:posts="$store.getters.postsAll")
   appfooter
 </template>
 <script>
 import header from './header';
 import alerts from './alerts';
-import article from './article';
+import posts from './posts';
 import aside from './aside';
 import footer from './footer';
 import codes from './codes';
 import users from './users';
 import books from './books';
+import content from './content';
 export default {
   data() {
     return {
@@ -65,12 +62,13 @@ export default {
   components: {
     appheader:header,
     appalerts:alerts,
-    apparticle:article,  
+    appposts:posts,  
     appaside:aside,
     appfooter:footer,
     appcodes:codes,
     appusers:users,
-    appbooks:books
+    appbooks:books,
+    appcontent:content
   }
 }
 </script>
