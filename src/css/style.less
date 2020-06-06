@@ -74,7 +74,7 @@
     padding:0 5px;
     height:25px;
     border-right:1px solid lighten(spin(@profilecolor,70),20%);
-    a {
+    &__text {
       color:darken(spin(@profilecolor,70),20%);
       font-size:15px;
       text-decoration:none;
@@ -157,67 +157,7 @@
     margin-top:0;  
   }
 .content{
-  display:flex;
-  flex-direction:row;
-  flex-wrap:wrap;
-  align-items:top;
   width:70%;
-  justify-content:space-around;
-  article{
-    margin:20px;
-    border: 1px solid black;
-    min-width:350px;
-    max-width:350px;
-    
-    background-color:#fff;
-    flex:1;
-    text-align:center;
-    p{
-      padding:10px;  
-        
-    }
-    .post__desc {
-      height:150px;
-    }
-	 .picture {
-		  margin:20px auto;
-		  width: 80%;
-		  height: 300px;
-		  padding: 10px;
-		  box-shadow: -1px -1px 4px 4px #aa88ad;
-		  background-image: url('../images/robot2.jpg');
-		  background-size: cover;
-		  background-position: center center;
-		  background-clip: border-box;
-		  position: relative;
-		  filter:brightness(90%) blur(3px); 
-		  div {
-			  width: 50px;
-			  height: 50px;
-			  z-index: 20;
-			  position: absolute;
-			  font-size:35px;
-			  font-weight: bold;
-			  left: 0;
-			  bottom: 0;
-			  background-color: #df7645;
-			  color: #fff;
-			  filter:none;
-			}
-		   
-		}
-    .newsstat{
-      color:darken(@logocolor,20);
-      padding:4px;
-      border-top:1px dashed darken(@logocolor,20);
-      background:lighten(@logocolor,43%);
-      span{
-        padding-left:6px;
-        font-weight:bold;
-      }
-      
-    }
-  }
   
 }
 .post {
@@ -858,10 +798,69 @@
     }
 }
 .page {
-  display:flex;
-  flex-wrap:wrap;
+  width:100%;
   padding:0;
-  margin:20px 10px;
+  margin:10px 5px;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  align-items:left;
+  width:70%;
+  justify-content:space-around;
+  article{
+    margin:10px;
+    border: 1px solid black;
+    min-width:300px;
+    max-width:300px;
+    
+    background-color:#fff;
+    text-align:center;
+    p{
+      padding:10px;  
+        
+    }
+    .post__desc {
+      height:150px;
+    }
+	 .picture {
+		  margin:20px auto;
+		  width: 80%;
+		  height: 300px;
+		  padding: 10px;
+		  box-shadow: -1px -1px 4px 4px #aa88ad;
+		  background-image: url('../images/robot2.jpg');
+		  background-size: cover;
+		  background-position: center center;
+		  background-clip: border-box;
+		  position: relative;
+		  filter:brightness(90%) blur(3px); 
+		  div {
+			  width: 50px;
+			  height: 50px;
+			  z-index: 20;
+			  position: absolute;
+			  font-size:35px;
+			  font-weight: bold;
+			  left: 0;
+			  bottom: 0;
+			  background-color: #df7645;
+			  color: #fff;
+			  filter:none;
+			}
+		   
+		}
+    .newsstat{
+      color:darken(@logocolor,20);
+      padding:4px;
+      border-top:1px dashed darken(@logocolor,20);
+      background:lighten(@logocolor,43%);
+      span{
+        padding-left:6px;
+        font-weight:bold;
+      }
+      
+    }
+  }
 }
 footer{
   background-color:black;

@@ -5,11 +5,13 @@ section.page
 <script>
 import code from './code';
 export default {
-  props: {
-    codes: {
-      type: Array,
-      required: true    
-    }  
+  data()  {
+    return {
+      codes:[]    
+    }
+  },
+  created() {
+    this.codes=this.$store.getters.codes;
   },
   components: {
     appcode:code  
