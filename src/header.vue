@@ -1,6 +1,6 @@
 <template lang="pug">
 - var menuitems = [{link:"/",text:"Home"},{link:"/alerts",text:"Alerts"},{link:"/codes",text:"Codes"},{link:"/users",text:"Users"},{link:"/books",text:"Books"}]
-- var profileitems = [{link:"/profile",text:"profile"},{link:"/profile/posts",text:"posts"}, {link:"/profile/followers",text:"followers"},{link:"/profile/groups",text:"groups"},{link:"/profile/messages", text:"messages"},{link:"/profile/books",text:"books"},{link:"/profile/codes",text:"codes"},{link:"/profile/cards",text:"cards"},{link:"/profile/settings",text:"settings"},{link:"/profile/comments",text:"comments"},{link:"/profile/logout",text:"log out"}]
+- var profileitems = [{link:"/profile",text:"profile"},{link:"postsuser",text:"posts"}, {link:"followers",text:"followers"},{link:"groupsuser",text:"groups"},{link:"messages", text:"messages"},{link:"booksuser",text:"books"},{link:"codesuser",text:"codes"},{link:"cardsuser",text:"cards"},{link:"commentsuser",text:"comments"},{link:"settings",text:"settings"},{link:"logout",text:"log out"}]
 header.header
   div.header__banner 
     h1.header__title
