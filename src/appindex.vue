@@ -13,8 +13,7 @@ div#appindex(data-id="appindex")
       :cards="$store.getters.cards", 
       :groups="$store.getters.groupsUser"
       :iduser="$store.getters.loginid")   
-    .content
-      appcontent(:books="$store.getters.books", :codes="$store.getters.codes", :alerts="[$store.getters.alert]", :users="$store.getters.users",:posts="$store.getters.postsAll")
+    appcontent(:books="$store.getters.books", :codes="$store.getters.codes", :alerts="[$store.getters.alert]", :users="$store.getters.users",:posts="$store.getters.postsAll")
   appfooter
 </template>
 <script>

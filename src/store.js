@@ -550,7 +550,7 @@ export default new Vuex.Store({
         	    return pu
         },
         postsAll: state => {return state.posts},
-        alerts: state => {return state.alert},
+        alerts: state => {return state.alerts},
         groups: state => {return state.groups},
         groupsAdmin: state => {return state.groups.filter((g)=>{return g.idAdmin==state.userloginid})},
         user: state => {return state.users[state.userloginid]},
