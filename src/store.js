@@ -347,17 +347,23 @@ export default new Vuex.Store({
         	    id:0,
         	    userId:0,
         	    postId:7,
+        	    date:"17:51:25 06.06.2020",
+        	    like:3,
         	    text:"It`s cool. Good work"
         },{
         	    id:1,
         	    userId:6,
              postId:3,
+             like:1,
+             date:"17:51:25 06.06.2020",
              text:"It`s cool."        	    
         	    
         },{
         	    id:2,
         	    userId:1,
         	    postId:5,
+        	    like:2,
+        	    date:"17:51:25 06.06.2020",
         	    text:"Good work. Liked it"
         }],
         alerts:[{
