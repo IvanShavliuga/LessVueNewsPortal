@@ -2,7 +2,8 @@
 div.code
   div(v-for="(src,key) in code.src").code__list
     article(v-if="src==='codepen'", :data-id="code.id").code__codepen
-      p(data-height="265",
+      p(data-height="280",
+        data-width="300",
         data-theme-id="light",
         data-default-tab="result",
         data-user="ivanshavliuga",

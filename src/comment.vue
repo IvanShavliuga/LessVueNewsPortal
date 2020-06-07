@@ -4,7 +4,10 @@ div.comment
   p.comment__text {{comment.text}}
   p.comment__date 
     span {{comment.date}}
-    span {{comment.like}}
+    span
+      i.far.fa-thumbs-up.icon.icon__vote(title="+")
+      b {{comment.like}}
+      i.far.fa-thumbs-down.icon.icon__vote(title="-") 
 </template>
 <script>
 export default  {
