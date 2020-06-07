@@ -231,11 +231,12 @@ export default new Vuex.Store({
              desc: 'Vue.js is modern framework. This modern framework comes from China and is already gaining popularity. It is easy to learn and suitable for beginners.',
              like:[1,2,3],
              repost:[1,2,3],
-             comments:[],
+             comments:[3,4],
              views:[1,2,3],
              cat:["Study", "Vue.js", "Frontend"],
              type:"post",
-             likeclick:false 
+             likeclick:false,
+             activecomment:0 
         },{ 
              id: 1,
              userId:1,
@@ -250,7 +251,8 @@ export default new Vuex.Store({
              views:[1,2,3],
              cat:["Study", "Angular", "Frontend", "TypeScript"],
              type:"post",
-             likeclick:false
+             likeclick:false,
+             activecomment:0
         },{
              id: 2,
              userId:0,
@@ -265,7 +267,8 @@ export default new Vuex.Store({
              comments:[],
              cat:["Study", "JavaScript", "Frontend"],
              type:"post",
-             likeclick:false 
+             likeclick:false,
+             activecomment:0 
         },{
              id: 3,
              userId:0,
@@ -280,7 +283,8 @@ export default new Vuex.Store({
              views:[1,2,3,6],
              cat:["Work", "Linux"],
              type:"post",
-             likeclick:false 
+             likeclick:false,
+             activecomment:0 
         },{
              id: 4,
              userId:1,
@@ -295,7 +299,8 @@ export default new Vuex.Store({
              views:[0,1,2,3,6],
              cat:["Work", "Angular","TypeScript"],
              type:"post",
-             likeclick:false 
+             likeclick:false,
+             activecomment:0 
         },{
              like:[1,2,3,4,5,6],
              id: 5,
@@ -310,7 +315,8 @@ export default new Vuex.Store({
              views:[0,1,2,3,4,5,6],
              cat:["Work", "Vue.js","SPA"],
              type:"post",
-             likeclick:false 
+             likeclick:false,
+             activecomment:0
         
         },{
              id: 6,
@@ -326,7 +332,8 @@ export default new Vuex.Store({
              views:[0,1,2,3,4,5,6],
              cat:["Work", "Python"],
              type:"post",
-             likeclick:false         
+             likeclick:false,
+             activecomment:0         
         },{
              id: 7,
              userId:2,
@@ -341,7 +348,8 @@ export default new Vuex.Store({
              comments:[0],
              cat:["Work", "Node.js","Study"],
              type:"post",
-             likeclick:false     
+             likeclick:false,
+             activecomment:0     
         }],
         comments:[{
         	    id:0,
@@ -362,6 +370,21 @@ export default new Vuex.Store({
         	    id:2,
         	    userId:1,
         	    postId:5,
+        	    like:2,
+        	    date:"17:51:25 06.06.2020",
+        	    text:"Good work. Liked it"
+        },{
+        	    id:3,
+        	    userId:6,
+             postId:0,
+             like:1,
+             date:"17:51:25 06.06.2020",
+             text:"It`s cool."        	    
+        	    
+        },{
+        	    id:4,
+        	    userId:1,
+        	    postId:0,
         	    like:2,
         	    date:"17:51:25 06.06.2020",
         	    text:"Good work. Liked it"
@@ -648,8 +671,13 @@ export default new Vuex.Store({
         },
         readalert({commit},alert) {
             commit("READALERT",alert);        
+        },
+        postcommentnext({commit},post) {
+            commit("POSTCOMMENTNEXT",post)        
+        },
+        postcommentprev({commit},post) {
+            commit("POSTCOMMENTPREV",post)        
         }
-        
            
     },
     mutations: {
@@ -745,7 +773,15 @@ export default new Vuex.Store({
         },
         "READALERT" (state,alert) {
            state.alert.read=true;
-        }        
+        },
+        "POSTCOMMENTNEXT" (state,post) {
+           if(state.posts[post.id].activecomment<state.posts[post.id].comments.length-1)
+             post.activecomment++;        
+        },
+        "POSTCOMMENTPREV" (state,post) {
+           if(state.posts[post.id].activecomment>0)
+             post.activecomment--;        
+        }       
            
     }
 })
