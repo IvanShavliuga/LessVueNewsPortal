@@ -677,8 +677,10 @@ export default new Vuex.Store({
         },
         postcommentprev({commit},post) {
             commit("POSTCOMMENTPREV",post)        
-        }
-           
+        },
+        postcommentspam({commit},post){
+            commit("POSTCOMMENTSPAM",post)        
+        }   
     },
     mutations: {
         "LIKEPOST" (state,post) {
@@ -776,12 +778,20 @@ export default new Vuex.Store({
         },
         "POSTCOMMENTNEXT" (state,post) {
            if(state.posts[post.id].activecomment<state.posts[post.id].comments.length-1)
-             post.activecomment++;        
+             state.posts[post.id].activecomment++;        
         },
         "POSTCOMMENTPREV" (state,post) {
            if(state.posts[post.id].activecomment>0)
-             post.activecomment--;        
-        }       
-           
+             state.posts[post.id].activecomment--;        
+        },
+        "POSTCOMMENTSPAM" (state,post) {
+        	  if(post.comments.length>0){
+        	  	 console.log("enter "+post.activecomment)       
+             state.posts[post.id].comments = post.comments.splice(post.activecomment,1);
+             if(state.posts[post.id].activecomment>state.posts[post.id].comments.length)
+               state.posts[post.id].activecomment--;
+             
+           }
+        }   
     }
 })
