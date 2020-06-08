@@ -8,14 +8,13 @@ header.header
         span NEWS
     p.header__subtitle Новости высоких технологий и науки
   ul.header__menu
-    li
-      i.fab.fa-less.icon.icon__tech 
-      i.fab.fa-vuejs.icon.icon__tech
     each item in menuitems
       li
         router-link(to=item.link)=item.text
   div.header__navbar
     ul.header__nav
+      li.header__nav__icon       
+        i.fa.fa-user.icon.icon__tech
       each item in profileitems
         li.header__link
           router-link(to=item.link).header__link__text=item.text
