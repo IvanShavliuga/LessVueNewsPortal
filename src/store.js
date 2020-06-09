@@ -357,12 +357,14 @@ export default new Vuex.Store({
         	    postId:7,
         	    date:"17:51:25 06.06.2020",
         	    like:3,
+        	    likeclick:false,
         	    text:"It`s cool. Good work"
         },{
         	    id:1,
         	    userId:6,
              postId:3,
              like:1,
+             likeclick:false,
              date:"17:51:25 06.06.2020",
              text:"It`s cool."        	    
         	    
@@ -371,6 +373,7 @@ export default new Vuex.Store({
         	    userId:1,
         	    postId:5,
         	    like:2,
+        	    likeclick:false,
         	    date:"17:51:25 06.06.2020",
         	    text:"Good work. Liked it"
         },{
@@ -378,6 +381,7 @@ export default new Vuex.Store({
         	    userId:6,
              postId:0,
              like:1,
+             likeclick:false,
              date:"17:51:25 06.06.2020",
              text:"It`s cool."        	    
         	    
@@ -386,6 +390,7 @@ export default new Vuex.Store({
         	    userId:1,
         	    postId:0,
         	    like:2,
+        	    likeclick:false,
         	    date:"17:51:25 06.06.2020",
         	    text:"Good work. Liked it"
         }],
@@ -680,7 +685,13 @@ export default new Vuex.Store({
         },
         postcommentspam({commit},post){
             commit("POSTCOMMENTSPAM",post)        
-        }   
+        },
+        likecomment({commit},comment) {
+            commit("LIKECOMMENT",comment)        
+        },
+        dislikecomment({commit},comment){
+            commit("DISLIKECOMMENT",comment)        
+        }  
     },
     mutations: {
         "LIKEPOST" (state,post) {
@@ -785,6 +796,9 @@ export default new Vuex.Store({
              state.posts[post.id].activecomment--;        
         },
         "POSTCOMMENTSPAM" (state,post) {
+        	  if(post.comments.length==1) {
+             state.posts[post.id].comments=[];        	  
+        	  }
         	  if(post.comments.length>0){
         	  	 console.log("enter "+post.activecomment)       
              state.posts[post.id].comments = post.comments.splice(post.activecomment,1);
@@ -792,6 +806,18 @@ export default new Vuex.Store({
                state.posts[post.id].activecomment--;
              
            }
+        },
+        "LIKECOMMENT" (state,comment) {
+           if(!comment.likeclick) {
+             state.comments[comment.id].like++;
+             state.comments[comment.id].likeclick=true;           
+           }        
+        },
+        "DISLIKECOMMENT" (state,comment) {
+           if(!comment.likeclick) {
+             state.comments[comment.id].like--; 
+             state.comments[comment.id].likeclick=true;          
+           }        
         }   
     }
 })

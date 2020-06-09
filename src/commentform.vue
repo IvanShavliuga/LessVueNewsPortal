@@ -4,7 +4,7 @@ div.comments
   button.comments__button(@click="spam(post)") spam
   button.comments__button(@click="next(post)") next
   span.comments__number(v-if="post.comments.length>0") {{post.activecomment+1}} / {{post.comments.length}}
-  appcomment(v-if="post.comments.length>0"  :comment="comments[post.activecomment]"  :user="users[comments[post.activecomment].userId]")
+  appcomment(v-if="post.comments.length>0"  :comment="comments[post.comments[post.activecomment]]"  :user="users[comments[post.activecomment].userId]")
   div(v-if="post.comments==[]||post.comments==undefined||post.comments.length==0").commentsno 
     div No comments
 </template>
