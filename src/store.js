@@ -785,6 +785,9 @@ export default new Vuex.Store({
              state.posts[post.id].activecomment--;        
         },
         "POSTCOMMENTSPAM" (state,post) {
+        	  if(post.comments.length==1) {
+             state.posts[post.id].comments=[];        	  
+        	  }
         	  if(post.comments.length>0){
         	  	 console.log("enter "+post.activecomment)       
              state.posts[post.id].comments = post.comments.splice(post.activecomment,1);
