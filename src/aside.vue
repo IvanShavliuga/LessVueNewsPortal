@@ -45,10 +45,11 @@ aside.aside
   div.groups
     ul.groups__list
       li(v-for="(grp,k) in groups" :key="k").groups__item
-        h3.groups__name 
+        h3.groups__name(@click="selectgroup(grp.id)") 
           i(v-if="iduser===grp.idAdmin").fa.fa-user-secret.icon.icon__admin
           i(v-else).far.fa-newspaper.icon.icon__group
-          span {{grp.name}}
+          span 
+            router-link(to="/groupview") {{grp.name}}
   div.friends
     ul.friends__list
       li(v-for="(f,k) in friends" :key="k").friends__item 
@@ -88,6 +89,11 @@ export default {
       type: Number,
       required:true    
     }
+  },
+  methods: {
+    selectgroup(id) {
+      this.$store.dispatch("selectgroup",id);    
+    }  
   }
 }
 </script>
