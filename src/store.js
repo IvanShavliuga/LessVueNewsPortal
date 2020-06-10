@@ -543,7 +543,8 @@ export default new Vuex.Store({
           comments:[],
           views:[1,2,3]  
         }],
-        userloginid:0      
+        userloginid:0,
+        selectedgroup:0      
     },
     getters: {
     	  books:state => {return state.books},
@@ -635,7 +636,9 @@ export default new Vuex.Store({
             }  
             return rps;      
         },
-        comments:state => {return state.comments}     
+        comments:state => {return state.comments},  
+        commentsuser:state => {return state.comments.filter((c)=>{return c.userId=== state.userloginid});},
+        postgroup:state => {return state.posts.filter((p)=>{return p.groupId===state.selectedgroup})}   
     },
     actions: {
         likepost({commit}, post) {
@@ -691,6 +694,9 @@ export default new Vuex.Store({
         },
         dislikecomment({commit},comment){
             commit("DISLIKECOMMENT",comment)        
+        },
+        selectgroup({commit},id) {
+            commit("SELECTGROUP",id);        
         }  
     },
     mutations: {
@@ -818,6 +824,9 @@ export default new Vuex.Store({
              state.comments[comment.id].like--; 
              state.comments[comment.id].likeclick=true;          
            }        
+        },
+        "SELECTGROUP" (state,id) {
+           state.selectedgroup=id;        
         }   
     }
 })

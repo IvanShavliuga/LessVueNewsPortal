@@ -14,6 +14,7 @@ import cardsuser from './cardsuser';
 import messages from './messages';
 import settings from './settings';
 import commentsuser from './commentsuser';
+import postgroup from './postgroup';
 export const routes = [{
   	 path: '/', 
   	 component: posts
@@ -59,5 +60,8 @@ export const routes = [{
   },{
   	 path: '/settings',
     component:settings,
+  },{
+    path:'/groupview',
+    component:postgroup
   }
 ]

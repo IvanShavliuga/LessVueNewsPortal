@@ -1,15 +1,24 @@
 <template lang="pug">
 section.page
-  h2.page__header Comments user
   div.page__container
-    each ind in [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
-      appcomment
+    appcomment(v-for="(c,k) in comments" :key="k" :comment="c", :user="user")
 </template>
 <script>
 import comment from './comment';
 export default {
+  data() {
+    return {
+      comments: [],
+      userid:0    
+    }
+  },
   components: {
     appcomment:comment  
+  },
+  created() {
+    this.userid=this.$store.getters.loginid;
+    this.comments=this.$store.getters.commentsuser;  
+    this.user=this.$store.getters.user;
   }
 }
 </script>
