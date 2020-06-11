@@ -1,7 +1,7 @@
 <template lang="pug">
 div.comment
   h4.comment__user @{{user.login}}
-  p.comment__text {{comment.text}} ({{comment.id}}, {{comment.likeclick}})
+  p.comment__text {{comment.text}}
   p.comment__date 
     span {{comment.date}}
     span

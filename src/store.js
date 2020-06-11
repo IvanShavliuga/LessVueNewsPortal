@@ -478,6 +478,7 @@ export default new Vuex.Store({
         codes: [{
           src:['codepen','github'],
           id:0,
+          userId:0,
           link:['https://codepen.io/ivanshavliuga/pen/WYzWEK', 'https://github.com/IvanShavluiga/LessVueNewsPortal'],
           profile:["https://codepen.io/ivanshavliuga",'https://github.com/IvanShavluiga'],
           title: "IT NEWS",
@@ -489,6 +490,7 @@ export default new Vuex.Store({
         },{
           src:['github'],
           id:0,
+          userId:1,
           link:['https://github.com/IvanShavluiga/vuejstimer'],
           profile:['https://github.com/IvanShavluiga'],
           title: "vue.js timer",
@@ -500,6 +502,7 @@ export default new Vuex.Store({
         },{
           src:['github'],
           id:0,
+          userId:0,
           link:['https://github.com/IvanShavluiga/vuejsnews'],
           profile:['https://github.com/IvanShavluiga'],
           title: "vue.js news",
@@ -638,7 +641,8 @@ export default new Vuex.Store({
         },
         comments:state => {return state.comments},  
         commentsuser:state => {return state.comments.filter((c)=>{return c.userId=== state.userloginid});},
-        postgroup:state => {return state.posts.filter((p)=>{return p.groupId===state.selectedgroup})}   
+        postgroup:state => {return state.posts.filter((p)=>{return p.groupId===state.selectedgroup})},
+        codeuser:state => {return state.codes.filter((c)=>{return c.userId===state.userloginid})}   
     },
     actions: {
         likepost({commit}, post) {
