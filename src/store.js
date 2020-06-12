@@ -226,7 +226,7 @@ export default new Vuex.Store({
              category:"Work",
              header:"Development of a news portal",
              date:"25.02.2020",
-             userId:0,
+             userId:1,
              id:1,
              body:"The site must be developed using  technology Vue.js. The news portal must be set up using bootstrap."          
                      
@@ -557,9 +557,12 @@ export default new Vuex.Store({
           views:[1,2,3]  
         }],
         userloginid:0,
-        selectedgroup:0      
+        selectedgroup:0,
+        selectuser:0,
+        asidehide:false      
     },
     getters: {
+    	  asidehide: state => {return state.asidehide},
     	  books:state => {return state.books},
     	  codes:state =>  {return state.codes},
         users: state => {return state.users},
@@ -714,7 +717,14 @@ export default new Vuex.Store({
         },
         readmessage({commit},message) {
             commit("READMESSAGE",message)        
-        }  
+        },
+        selectuser({commit},id) {
+            commit("SELECTUSER",id)        
+        },
+        asidehide({commit},value){
+        	   console.log("state enter "+value)
+            commit("ASIDEHIDE", value)        
+        } 
     },
     mutations: {
         "LIKEPOST" (state,post) {
@@ -847,6 +857,13 @@ export default new Vuex.Store({
         },
         "READMESSAGE" (state,message) {
            state.messages[message.id].read = !message.read;        
+        },
+        "SELECTUSER" (state,id) {
+           state.selectuser=id;        
+        },
+        "ASIDEHIDE" (state, value) {
+        	  console.log("change "+value)
+           state.asidehide=value;
         }   
     }
 })
