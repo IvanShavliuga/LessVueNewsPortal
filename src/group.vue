@@ -4,7 +4,7 @@ div.group
     div.group__icon.fas.fa-users
     i(v-if="group.idAdmin==loginid").group__status.fa.fa-user-secret.icon.icon__admin
     i(v-else).group__status.far.fa-newspaper.icon.icon__group 
-  h3.group__title(@click="selectgroup(grp.id)") 
+  h3.group__title(@click="selectgroup(group.id)") 
     span 
       router-link(to="/groupview") {{group.name}}
   p.group__cat {{group.category}}

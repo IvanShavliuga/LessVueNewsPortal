@@ -204,6 +204,16 @@ export default new Vuex.Store({
             body:"Please subscribe to my group",
             read:false,
             show:false
+        },{
+            type:"user",
+            id:3,
+            from:1,
+            to:0,
+            groupId:-1,
+            title:"The test",
+            body:"Test this service",
+            read:false,
+            show:false
         }], //messages
         cards: [{
              category:"Work",
@@ -701,6 +711,9 @@ export default new Vuex.Store({
         },
         selectgroup({commit},id) {
             commit("SELECTGROUP",id);        
+        },
+        readmessage({commit},message) {
+            commit("READMESSAGE",message)        
         }  
     },
     mutations: {
@@ -831,6 +844,9 @@ export default new Vuex.Store({
         },
         "SELECTGROUP" (state,id) {
            state.selectedgroup=id;        
+        },
+        "READMESSAGE" (state,message) {
+           state.messages[message.id].read = !message.read;        
         }   
     }
 })

@@ -1030,6 +1030,60 @@ footer{
    padding:5px; 
  }
 }
+.message {
+  margin: 5px;
+  padding: 0;
+  width:100%;
+  background-color:#fff;
+  border:1px dotted #afa9df;
+  &__title {
+    border:1px solid rgba(200,185,255,0.9);
+    background-color:rgba(200,185,255,0.6);
+    padding:0 10px;
+    color:@infocolor;
+  }
+  &__info, &__status {
+    border:1px solid rgba(200,255,189,0.9);
+    background-color:rgba(200,255,189,0.6);
+    height:22px;   
+    font-size:18px;
+    padding:0;
+    span {
+      line-height:0;
+      font-size:18px;    
+    }
+    &__system {
+      padding:0 10px;
+      color:spin(@infocolor,50%);  
+    }
+    &__user {
+      padding:0 10px;
+      color:#de9870;  
+    }
+    &__button {
+      height:18px;   
+      font-size:18px;
+      border:1px solid #dfcf70; 
+      background:transparent;
+      padding:0 5px;
+      margin:0 10px; 
+      border-radius:20px;
+      line-height:0;
+      color:#dfcf70;
+      text-transform:uppercase;    
+       
+    }
+    &__useradd {
+      color:#dfbe20;
+      margin:0 5px;    
+    }
+  }
+  &__text {
+    height:100px;
+    padding:10px 0;
+    color:#656565;  
+  }
+}
 @media (max-width:1200px){
   header{
     flex-direction:column;
