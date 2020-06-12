@@ -1,4 +1,22 @@
 <template lang="pug">
 section.page
-  h2.page__header Messages user
+  appmessage(v-for="(m,k) in messages" :key="k" :message="m" :users="users")
 </template>
+<script>
+import message from './message';
+export default {
+  data(){
+    return {
+      messages:[],
+      users:[]    
+    }
+  },
+  created() {
+    this.messages = this.$store.getters.messages;
+    this.users = this.$store.getters.users;
+  },
+  components:{
+    appmessage:message  
+  }
+}
+</script>

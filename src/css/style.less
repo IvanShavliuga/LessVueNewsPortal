@@ -1030,6 +1030,41 @@ footer{
    padding:5px; 
  }
 }
+.message {
+  margin: 5px;
+  padding: 5px;
+  width:100%;
+  background-color:#fff;
+  border:1px dotted #afa9df;
+  &__title {
+     padding:0 10px;
+    color:@infocolor;
+  }
+  &__info {
+    border:1px solid rgba(200,255,189,0.9);
+    background-color:rgba(200,255,189,0.3);
+    height:22px;   
+    font-size:18px;
+    padding:0;
+    span {
+      line-height:0;
+      font-size:18px;    
+    }
+    &__system {
+      padding:0 10px;
+      color:spin(@infocolor,50%);  
+    }
+    &__add {
+      padding:0 10px;
+      color:#de9870;  
+    }
+  }
+  &__text {
+    height:100px;
+    padding:10px 0;
+    color:#656565;  
+  }
+}
 @media (max-width:1200px){
   header{
     flex-direction:column;
