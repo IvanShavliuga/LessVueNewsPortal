@@ -8,12 +8,12 @@ div#appindex(data-id="appindex")
       span.promohead__temperature 13 &#8451;
     span.promohead__news {{news}}
   main    
-    appaside(:user="$store.getters.user", 
+    appaside(v-show="asidehide" :user="$store.getters.user", 
       :friends="$store.getters.friends", 
       :cards="$store.getters.cards", 
       :groups="$store.getters.groupsUser"
       :iduser="$store.getters.loginid")   
-    appcontent(:books="$store.getters.books", :codes="$store.getters.codes", :alerts="[$store.getters.alert]", :users="$store.getters.users",:posts="$store.getters.postsAll")
+    appcontent( :books="$store.getters.books", :codes="$store.getters.codes", :alerts="[$store.getters.alert]", :users="$store.getters.users",:posts="$store.getters.postsAll")
   appfooter
 </template>
 <script>
@@ -36,6 +36,7 @@ export default {
         minute:0,
         second:0
       },
+      asidehide:false
     }  
   },
   methods: {
@@ -57,6 +58,10 @@ export default {
   created:function(){ 
     this.now();  
     setTimeout(()=>{this.now()},1000);
+    this.asidehide = this.$store.getters.asidehide;
+  },
+  updated() {
+    this.asidehide = this.$store.getters.asidehide;  
   },
   components: {
     appheader:header,

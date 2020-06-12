@@ -14,8 +14,24 @@ header.header
   div.header__navbar
     ul.header__nav
       li.header__nav__icon       
-        i.fa.fa-user.icon.icon__tech
+        i.fa.fa-user.icon.icon__tech(@click="toggleaside")
       each item in profileitems
         li.header__link
           router-link(to=item.link).header__link__text=item.text
 </template>
+<script>
+export default {
+  data() {
+    return {
+      asidehide:true    
+    }  
+  },
+  methods: {
+    toggleaside() {
+      this.asidehide=this.$store.getters.asidehide;
+      console.log("start "+this.asidehide)
+      this.$store.dispatch("asidehide",!this.asidehide)     
+    }  
+  }
+}
+</script>

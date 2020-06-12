@@ -1,5 +1,5 @@
 <template lang="pug">
-.content
+.content(:style="(asidehide)?('width:70%'):('width:100%')")
   router-view
 </template>
 <script>
@@ -24,7 +24,15 @@ export default {
     posts: {
       type: Array,
       required: true    
+    }
+  },
+  data() {
+    return {
+      asidehide:true    
     }  
+  },
+  updated() {
+    this.asidehide=this.$store.getters.asidehide;  
   }
 }
 
