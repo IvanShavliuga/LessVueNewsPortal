@@ -4,7 +4,7 @@ article.post
     div {{post.id+1}}
   h4 {{post.title}}
   p.post__desc {{post.desc}} 
-  appstaticpost(:like="post.like" :views="post.views" :comments="post.comments" :repost="post.repost")
+  appstaticpost(:like="post.like" :views="post.views" :comments="post.comments" :repost="post.repost" :user="users[post.userId]")
   appcommentform(:comments="comments", :users="users", :post="post")
 </template>
 <script>
