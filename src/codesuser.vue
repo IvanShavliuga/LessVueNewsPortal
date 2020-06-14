@@ -15,7 +15,7 @@ export default {
   created() {
     this.users=this.$store.getters.users;
     this.loginid=this.$store.getters.loginid;
-    this.groups=this.$store.getters.codeuser;
+    this.codes=this.$store.getters.codeuser;
     
   },
   components: {
