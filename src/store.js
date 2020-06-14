@@ -564,6 +564,7 @@ export default new Vuex.Store({
     getters: {
     	  asidehide: state => {return state.asidehide},
     	  books:state => {return state.books},
+    	  booksUser:state => {return state.books.filter((b)=>{return b.userId===state.userloginid})},
     	  codes:state =>  {return state.codes},
         users: state => {return state.users},
         loginid: state =>{return state.userloginid},
