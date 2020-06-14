@@ -10,7 +10,7 @@ article.book
   p.book__cat(v-else)  
     ul.book__cat__list
       li.book__cat__item( v-for="(c,key) in book.cat", :key="key+300") {{c}}
-  appstaticpost(:like="book.like" :views="book.views" :comments="book.comments" :repost="book.repost")
+  appstaticpost(:like="book.like" :views="book.views" :comments="book.comments" :repost="book.repost" :user="user")
 </template>
 <script>
 import staticpost from './staticpost';
@@ -19,6 +19,10 @@ export default {
     book: {
       type: Object,
       required:true    
+    },
+    user: {
+      type: Object,
+      required:true  
     }  
   },
   components: {
