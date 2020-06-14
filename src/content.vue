@@ -33,6 +33,9 @@ export default {
   },
   updated() {
     this.asidehide=this.$store.getters.asidehide;  
+  },
+  created() {
+    this.asidehide=this.$store.getters.asidehide;  
   }
 }
 

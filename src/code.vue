@@ -8,7 +8,7 @@ div.code
         data-default-tab="result",
         data-user="ivanshavliuga",
         data-slug-hash="WYzWEK",
-        style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;",
+        style="height: 250px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;",
         data-pen-title="ITNEWS. ").codepen
         span See the Pen 
           a(:href="code.link[key]") ITNEWS

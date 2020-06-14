@@ -155,7 +155,7 @@
     margin-top:0;  
   }
 .content{
-  width:70%;
+  width:100%;
   
 }
 .post {
@@ -731,11 +731,10 @@
   display:flex;
   flex-wrap:wrap;
   justify-content:space-around;
-  height:280px!important;
-  margin:60px 0; 
+  margin:5px; 
    &__image {
-     height:80px;
-     width:80px; 
+     height:100px;
+     width:100px; 
      border:none;
      outline:none; 
    }
@@ -1083,6 +1082,38 @@ footer{
     padding:10px 0;
     color:#656565;  
   }
+}
+.profilepage {
+  width:100%;
+  padding:15px;
+  margin:5px;
+  background:#fefefe;
+  border:1px dotted #6587be;
+  &__header {
+    font-size:24px;
+    color:#65378e;  
+  }
+  &__login {
+    font-size:18px;
+    color:#9c9c9c;
+    a {
+      color:#9c9c9c;
+      text-decoration:none;
+    }   
+  }
+  &__info {
+    color:@infocolor;  
+  }
+  &__skills {
+    &__list {
+      margin:5px 10px;    
+    }
+    &__item {
+      display:inline-block; 
+      margin:10px 0;
+      color:@infocolor;   
+    }  
+  } 
 }
 @media (max-width:1200px){
   header{
