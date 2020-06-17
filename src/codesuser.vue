@@ -1,6 +1,6 @@
 <template lang="pug">
 section.page
-  appcode(v-for="(c,k) in groups" :code="c", :key="k+100" )
+  appcode(v-for="(c,k) in codes" :code="c", :key="k+100" :user="users[c.userId]")
 </template>
 <script>
 import code from './code';

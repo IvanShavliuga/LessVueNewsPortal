@@ -569,6 +569,10 @@ export default new Vuex.Store({
         users: state => {return state.users},
         loginid: state =>{return state.userloginid},
         messages: state => {return state.messages.filter((m)=>{return m.to==state.userloginid||m.from==state.userloginid})},
+        addfriends: state => {
+        	    return state.messages.filter((m)=>{
+        	    	return m.to==state.userloginid&&m.type==="user-add"
+        })},
         cards: state => {return state.cards},
         personalcards: state => {return state.cards.filter((c)=>{return c.userId === state.userloginid})},
         personalposts: state => {

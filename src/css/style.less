@@ -847,7 +847,8 @@
   flex-direction:row;
   flex-wrap:wrap;
   width:95%;
-  justify-content:space-around;
+  margin:5px auto;
+  justify-content:start;
   &__container {
     display:flex;  
     flex-wrap:wrap;
@@ -1110,10 +1111,48 @@ footer{
     }
     &__item {
       display:inline-block; 
-      margin:10px 0;
+      margin:0 10px;
       color:@infocolor;   
     }  
+  }
+  &__contacts {
+    &__list {
+      margin:5px 10px;    
+    }
+    &__item {
+      margin:5px 0;
+      list-style:none;
+      p {
+        display:inline-block;
+        margin:0 10px; 
+        &:first-child {
+          width:70px;        
+        }
+        &:last-child {
+          width:250px;        
+        }
+      }
+        
+    }
+    &__messenger {
+      color:@infocolor; 
+      text-align:right;
+    }
+    &__contact {
+      color:darken(spin(@profilecolor,70),20%);      
+    }
+        
   } 
+  &__friends {
+    
+    &__list {
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+          
+  }
 }
 @media (max-width:1200px){
   header{
