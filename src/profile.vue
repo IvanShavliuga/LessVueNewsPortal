@@ -1,6 +1,7 @@
 <template lang="pug">
 section.page
   div.profilepage(:data-id="user.login+'_'+user.id") 
+    appalert( :alert="alert" :users="[user]")
     h4.profilepage__header  {{user.name}}
     p.profilepage__login 
       i.fa.fa-id-badge.icon.icon__user 
@@ -37,6 +38,7 @@ section.page
 <script>
 import user from './user';
 import group from './group';
+import alert from './alert';
 export default {
   data() {
     return {
@@ -45,12 +47,15 @@ export default {
       users:[],
       friends:[],
       groupsadmin:[],
-      loginid:0    
+      systemmessages:[], 
+      loginid:0,
+      alert:{}    
     }  
   },
   components: {
     appuser:user,
-    appgroup:group
+    appgroup:group,
+    appalert:alert
   },
   created() {
     this.user = this.$store.getters.user;
@@ -58,7 +63,16 @@ export default {
     this.friends = this.$store.getters.friends;
     this.addfriends = this.$store.getters.addfriends;
     this.groupsadmin = this.$store.getters.groupsAdmin;
-    this.loginid = this.$store.getters.loginid;  
+    this.loginid = this.$store.getters.loginid;
+    this.systemmessages = this.$store.getters.sysmessages;  
+    this.alert = {
+      header: this.systemmessages[0].title,
+      body:this.systemmessages[0].body,
+      status:`${(this.systemmessages[0].read)?('прочитано'):('не прочитано')}`,
+      userId:this.systemmessages[0].to,
+      read:this.systemmessages[0].read,
+      date:"12.05.2020 14:54:36"       
+    }
   }
 }  
 </script>
