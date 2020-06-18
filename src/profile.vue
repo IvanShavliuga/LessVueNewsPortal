@@ -7,47 +7,58 @@ section.page
       a(:href="user.link" target="_blank") {{user.login}}
     p.profilepage__info {{user.age}},  {{user.city}}
     p.profilepage__info {{user.spec}}
-    p.profilepage__friends(v-if="user.friends.length>0")
-      h4.profilepage__friends__title Friends: {{user.friends.length-1}}
-      ul.profilepage__friends__list
-        li.profilepage__friends__item(v-for="(f,k) in friends" :key="k")
-          appuser( :user="f")
-    p.profilepage__friends(v-if="addfriends.length>0")
-      h4.profilepage__friends__title Added to friends: {{addfriends.length}}
-      ul.profilepage__friends__list
-        li.profilepage__friends__item(v-for="(f,k) in addfriends" :key="k+300")
-          appuser( :user="users[f.from]")
-    p.profilepage__skills
-      h4.profilepage__skills__title Skills:
-      ul.profilepage__skills__list
-        li.profilepage__skills__item(v-for="(s,k) in user.skills" :key="k+100") 
-          p {{s}} 
     p.profilepage__contacts
       h4.profilepage__contacts__title Contacts:
       ul.profilepage__contacts__list
         li.profilepage__contacts__item(v-for="(c,k) in user.contacts" :key="k+200")
           p.profilepage__contacts__messenger {{c.messenger}}
           p.profilepage__contacts__contact {{c.contact}} 
+    p.profilepage__skills
+      h4.profilepage__skills__title Skills:
+      ul.profilepage__skills__list
+        li.profilepage__skills__item(v-for="(s,k) in user.skills" :key="k+100") 
+          p {{s}} 
+    p.profilepage__friends(v-if="user.friends.length>0")
+      h4.profilepage__friends__title Friends: {{user.friends.length-1}}
+      ul.profilepage__friends__list
+        li.profilepage__friends__item(v-for="(f,k) in friends" :key="k")
+          appuser( :user="f" :adduser="false")
+    p.profilepage__friends(v-if="addfriends.length>0")
+      h4.profilepage__friends__title Added to friends: {{addfriends.length}}
+      ul.profilepage__friends__list
+        li.profilepage__friends__item(v-for="(f,k) in addfriends" :key="k+300")
+          appuser( :user="users[f.from]" :adduser="true")
+    p.profilepage__groups
+      h4.profilepage__groups__title Groups:
+      ul.profilepage__groups__list
+        li.profilepage__groups__item(v-for="(f,k) in groupsadmin" :key="k")
+          appgroup( :group="f" :loginid="loginid" :user="user")
 </template>
 <script>
 import user from './user';
+import group from './group';
 export default {
   data() {
     return {
       user:{},
       addfriends:[],
       users:[],
-      friends:[]    
+      friends:[],
+      groupsadmin:[],
+      loginid:0    
     }  
   },
   components: {
-    appuser:user
+    appuser:user,
+    appgroup:group
   },
   created() {
     this.user = this.$store.getters.user;
     this.users = this.$store.getters.users;
     this.friends = this.$store.getters.friends;
-    this.addfriends = this.$store.getters.addfriends;  
+    this.addfriends = this.$store.getters.addfriends;
+    this.groupsadmin = this.$store.getters.groupsAdmin;
+    this.loginid = this.$store.getters.loginid;  
   }
 }  
 </script>

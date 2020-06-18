@@ -1,6 +1,6 @@
 <template lang="pug">
 section.page
-  appuser(v-for="(u,k) in followers" :key="k" :user="u")
+  appuser(v-for="(u,k) in followers" :key="k" :user="u" :adduser="false")
 </template>
 <script>
 import user from './user';
