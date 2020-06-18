@@ -573,6 +573,18 @@ export default new Vuex.Store({
         	    return state.messages.filter((m)=>{
         	    	return m.to==state.userloginid&&m.type==="user-add"
         })},
+        addgroups: state => {
+        	    return state.messages.filter((m)=>{
+        	    	return m.to==state.userloginid&&m.type==="user-group"
+        })},
+        sysmessages: state => {
+        	    return state.messages.filter((m)=>{
+        	    	return m.to==state.userloginid&&m.type==="system"
+        })},
+        usersmessages: state => {
+        	    return state.messages.filter((m)=>{
+        	    	return m.to==state.userloginid&&m.type==="user"
+        })},
         cards: state => {return state.cards},
         personalcards: state => {return state.cards.filter((c)=>{return c.userId === state.userloginid})},
         personalposts: state => {
