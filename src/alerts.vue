@@ -8,12 +8,14 @@ export default {
   data()  {
     return {
       users:[],
-      alerts:[]    
+      alerts:[],
+      systemmessages:[]    
     }
   },
   created() {
     this.users=this.$store.getters.users;
     this.alerts=this.$store.getters.alerts;
+    this.systemmessages = this.$store.getters.sysmessages;
   },
   components: {
     appalert:alert  
