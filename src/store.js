@@ -28,7 +28,39 @@ export default new Vuex.Store({
             },{
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
-            }] //contacts
+            }], //contacts
+      education:[{
+      	years: "2006-2011, 3.5 years",
+      	caption: "Polotsk state University",
+      	link:"psu.by",
+      	desc:"information technology software"
+      },{
+      	years: "2018-2019",
+      	caption: "INTUIT (Free courses)",
+      	link:"intuit.ru",
+      	desc:"basic JavaScript, HTML, CSS"
+      },{
+      	years: "2019 - now",
+      	caption: "GeekBrains (Free courses)",
+      	link:"geekbrains.ru",
+      	desc:"advanced JavaScript, HTML, CSS"
+      },{
+      	years: "2020 - now",
+      	caption: "ITVDN (Free course landing page)",
+      	link:"itvdn.com",
+      	desc:"basic Pug, SCSS"
+      }],
+      work: [{
+         years:"09/2018 - Now",
+         caption:"Table of Mendeleev",
+         link:"https://mendel-info.usite.pro",
+         desc:"Administrator"      
+      },{
+         years:"12/2019- Now",
+         caption:"Maybebaby project",
+         link:"https://www.geekbrains.ru",
+         desc:"junior Vue.js developer"      
+      }],
         },{
             id:1,
             link:"https://test.ru/id",
