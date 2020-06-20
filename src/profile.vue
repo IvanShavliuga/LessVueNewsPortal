@@ -23,10 +23,16 @@ section.page
       h4.profilepage__education__title Eduction:
       ul.profilepage__education__list
         li.profilepage__education__item(v-for="(e,k) in user.education" :key="k+100")
-          div.profilepage__education__line
-            each elem in [1,2,3,4]
-              span=elem 
           div.profilepage__education__block 
+            p {{e.caption}}
+            p {{e.desc}}
+            p {{e.years}}
+            p {{e.link}}
+    p.profilepage__works
+      h4.profilepage__works__title Works:
+      ul.profilepage__works__list
+        li.profilepage__works__item(v-for="(e,k) in user.work" :key="k+100")
+          div.profilepage__works__block 
             p {{e.caption}}
             p {{e.desc}}
             p {{e.years}}
