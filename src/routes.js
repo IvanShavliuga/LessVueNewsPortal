@@ -15,6 +15,22 @@ import messages from './messages';
 import settings from './settings';
 import commentsuser from './commentsuser';
 import postgroup from './postgroup';
+import user from './user';
+const userpage = {
+  props: ['id'],
+  data() {
+    return {
+      user:{}     
+    } 
+  },
+  template: '<appuser :user="user" :adduser="false"></appuser>',
+  components: {
+    appuser:user  
+  },
+  created() {
+    this.user = this.$store.getters.users[this.id];  
+  } 
+}
 export const routes = [{
   	 path: '/', 
   	 component: posts
@@ -63,5 +79,9 @@ export const routes = [{
   },{
     path:'/groupview',
     component:postgroup
+  },{
+    path:'/userpage/:id',
+    component: userpage,
+    props: true  
   }
 ]

@@ -591,7 +591,8 @@ export default new Vuex.Store({
         userloginid:0,
         selectedgroup:0,
         selectuser:0,
-        asidehide:false      
+        asidehide:false,
+        iduserpage:-1      
     },
     getters: {
     	  asidehide: state => {return state.asidehide},
@@ -913,6 +914,9 @@ export default new Vuex.Store({
         "ASIDEHIDE" (state, value) {
         	  console.log("change "+value)
            state.asidehide=value;
+        },
+        "USERPAGE" (state,user) {
+           state.iduserpage=user.id;        
         }   
     }
 })

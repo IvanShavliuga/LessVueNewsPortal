@@ -32,7 +32,11 @@ div.code
             i.fas.fa-code.icon.icon__code
         h3.code__title {{code.title}}
         p.code__profile {{code.profile[key]}} 
-      appstaticpost(:like="code.like" :views="code.views" :comments="code.comments" :repost="code.repost" :user="user")
+      appstaticpost(:like="code.like" 
+                    :views="code.views" 
+                    :comments="code.comments" 
+                    :repost="code.repost" 
+                    :user="user")
 </template>
 <script>
 import staticpost from './staticpost';
