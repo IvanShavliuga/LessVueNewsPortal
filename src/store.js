@@ -29,38 +29,38 @@ export default new Vuex.Store({
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
             }], //contacts
-      education:[{
-      	years: "2006-2011, 3.5 years",
-      	caption: "Polotsk state University",
-      	link:"psu.by",
-      	desc:"information technology software"
-      },{
-      	years: "2018-2019",
-      	caption: "INTUIT (Free courses)",
-      	link:"intuit.ru",
-      	desc:"basic JavaScript, HTML, CSS"
-      },{
-      	years: "2019 - now",
-      	caption: "GeekBrains (Free courses)",
-      	link:"geekbrains.ru",
-      	desc:"advanced JavaScript, HTML, CSS"
-      },{
-      	years: "2020 - now",
-      	caption: "ITVDN (Free course landing page)",
-      	link:"itvdn.com",
-      	desc:"basic Pug, SCSS"
-      }],
-      work: [{
-         years:"09/2018 - Now",
-         caption:"Table of Mendeleev",
-         link:"https://mendel-info.usite.pro",
-         desc:"Administrator"      
-      },{
-         years:"12/2019- Now",
-         caption:"Maybebaby project",
-         link:"https://www.geekbrains.ru",
-         desc:"junior Vue.js developer"      
-      }],
+		      education:[{
+		      	years: "2006-2011, 3.5 years",
+		      	caption: "Polotsk state University",
+		      	link:"https://psu.by",
+		      	desc:"information technology software"
+		      },{
+		      	years: "2018-2019",
+		      	caption: "INTUIT (Free courses)",
+		      	link:"https://intuit.ru",
+		      	desc:"basic JavaScript, HTML, CSS"
+		      },{
+		      	years: "2019 - now",
+		      	caption: "GeekBrains (Free courses)",
+		      	link:"https://geekbrains.ru",
+		      	desc:"advanced JavaScript, HTML, CSS"
+		      },{
+		      	years: "2020 - now",
+		      	caption: "ITVDN (Free course landing page)",
+		      	link:"https://itvdn.com",
+		      	desc:"basic Pug, SCSS"
+		      }],
+		      work: [{
+		         years:"09/2018 - Now",
+		         caption:"Table of Mendeleev",
+		         link:"https://mendel-info.usite.pro",
+		         desc:"Administrator"      
+		      },{
+		         years:"12/2019- Now",
+		         caption:"Maybebaby project",
+		         link:"https://www.geekbrains.ru",
+		         desc:"junior Vue.js developer"      
+		      }]
         },{
             id:1,
             link:"https://test.ru/id",
@@ -84,7 +84,39 @@ export default new Vuex.Store({
             },{
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
-            }] //contacts
+            }], //contacts
+            education:[{
+		      	years: "2006-2011, 3.5 years",
+		      	caption: "Polotsk state University",
+		      	link:"https://psu.by",
+		      	desc:"information technology software"
+		      },{
+		      	years: "2018-2019",
+		      	caption: "INTUIT (Free courses)",
+		      	link:"https://intuit.ru",
+		      	desc:"basic JavaScript, HTML, CSS"
+		      },{
+		      	years: "2019 - now",
+		      	caption: "GeekBrains (Free courses)",
+		      	link:"https://geekbrains.ru",
+		      	desc:"advanced JavaScript, HTML, CSS"
+		      },{
+		      	years: "2020 - now",
+		      	caption: "ITVDN (Free course landing page)",
+		      	link:"https://itvdn.com",
+		      	desc:"basic Pug, SCSS"
+		      }],
+		      work: [{
+		         years:"09/2018 - Now",
+		         caption:"Table of Mendeleev",
+		         link:"https://mendel-info.usite.pro",
+		         desc:"Administrator"      
+		      },{
+		         years:"12/2019- Now",
+		         caption:"Maybebaby project",
+		         link:"https://www.geekbrains.ru",
+		         desc:"junior Vue.js developer"      
+		      }]
         },{
             id:2,
             link:"https://test.ru/id",
@@ -108,7 +140,39 @@ export default new Vuex.Store({
             },{
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
-            }] //contacts
+            }], //contacts
+            education:[{
+		      	years: "2006-2011, 3.5 years",
+		      	caption: "Polotsk state University",
+		      	link:"https://psu.by",
+		      	desc:"information technology software"
+		      },{
+		      	years: "2018-2019",
+		      	caption: "INTUIT (Free courses)",
+		      	link:"https://intuit.ru",
+		      	desc:"basic JavaScript, HTML, CSS"
+		      },{
+		      	years: "2019 - now",
+		      	caption: "GeekBrains (Free courses)",
+		      	link:"https://geekbrains.ru",
+		      	desc:"advanced JavaScript, HTML, CSS"
+		      },{
+		      	years: "2020 - now",
+		      	caption: "ITVDN (Free course landing page)",
+		      	link:"https://itvdn.com",
+		      	desc:"basic Pug, SCSS"
+		      }],
+		      work: [{
+		         years:"09/2018 - Now",
+		         caption:"Table of Mendeleev",
+		         link:"https://mendel-info.usite.pro",
+		         desc:"Administrator"      
+		      },{
+		         years:"12/2019- Now",
+		         caption:"Maybebaby project",
+		         link:"https://www.geekbrains.ru",
+		         desc:"junior Vue.js developer"      
+		      }]
         },{
             id:3,
             link:"https://test.ru/id",
@@ -132,7 +196,39 @@ export default new Vuex.Store({
             },{
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
-            }] //contacts
+            }], //contacts
+            education:[{
+		      	years: "2006-2011, 3.5 years",
+		      	caption: "Polotsk state University",
+		      	link:"https://psu.by",
+		      	desc:"information technology software"
+		      },{
+		      	years: "2018-2019",
+		      	caption: "INTUIT (Free courses)",
+		      	link:"https://intuit.ru",
+		      	desc:"basic JavaScript, HTML, CSS"
+		      },{
+		      	years: "2019 - now",
+		      	caption: "GeekBrains (Free courses)",
+		      	link:"https://geekbrains.ru",
+		      	desc:"advanced JavaScript, HTML, CSS"
+		      },{
+		      	years: "2020 - now",
+		      	caption: "ITVDN (Free course landing page)",
+		      	link:"https://itvdn.com",
+		      	desc:"basic Pug, SCSS"
+		      }],
+		      work: [{
+		         years:"09/2018 - Now",
+		         caption:"Table of Mendeleev",
+		         link:"https://mendel-info.usite.pro",
+		         desc:"Administrator"      
+		      },{
+		         years:"12/2019- Now",
+		         caption:"Maybebaby project",
+		         link:"https://www.geekbrains.ru",
+		         desc:"junior Vue.js developer"      
+		      }]
         },{
             id:4,
             link:"https://test.ru/id",
@@ -156,7 +252,39 @@ export default new Vuex.Store({
             },{
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
-            }] //contacts
+            }], //contacts
+            education:[{
+		      	years: "2006-2011, 3.5 years",
+		      	caption: "Polotsk state University",
+		      	link:"https://psu.by",
+		      	desc:"information technology software"
+		      },{
+		      	years: "2018-2019",
+		      	caption: "INTUIT (Free courses)",
+		      	link:"https://intuit.ru",
+		      	desc:"basic JavaScript, HTML, CSS"
+		      },{
+		      	years: "2019 - now",
+		      	caption: "GeekBrains (Free courses)",
+		      	link:"https://geekbrains.ru",
+		      	desc:"advanced JavaScript, HTML, CSS"
+		      },{
+		      	years: "2020 - now",
+		      	caption: "ITVDN (Free course landing page)",
+		      	link:"https://itvdn.com",
+		      	desc:"basic Pug, SCSS"
+		      }],
+		      work: [{
+		         years:"09/2018 - Now",
+		         caption:"Table of Mendeleev",
+		         link:"https://mendel-info.usite.pro",
+		         desc:"Administrator"      
+		      },{
+		         years:"12/2019- Now",
+		         caption:"Maybebaby project",
+		         link:"https://www.geekbrains.ru",
+		         desc:"junior Vue.js developer"      
+		      }]
         },{
             id:5,
             link:"https://test.ru/id",
@@ -180,7 +308,39 @@ export default new Vuex.Store({
             },{
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
-            }] //contacts
+            }],
+            education:[{
+		      	years: "2006-2011, 3.5 years",
+		      	caption: "Polotsk state University",
+		      	link:"https://psu.by",
+		      	desc:"information technology software"
+		      },{
+		      	years: "2018-2019",
+		      	caption: "INTUIT (Free courses)",
+		      	link:"https://intuit.ru",
+		      	desc:"basic JavaScript, HTML, CSS"
+		      },{
+		      	years: "2019 - now",
+		      	caption: "GeekBrains (Free courses)",
+		      	link:"https://geekbrains.ru",
+		      	desc:"advanced JavaScript, HTML, CSS"
+		      },{
+		      	years: "2020 - now",
+		      	caption: "ITVDN (Free course landing page)",
+		      	link:"https://itvdn.com",
+		      	desc:"basic Pug, SCSS"
+		      }],
+		      work: [{
+		         years:"09/2018 - Now",
+		         caption:"Table of Mendeleev",
+		         link:"https://mendel-info.usite.pro",
+		         desc:"Administrator"      
+		      },{
+		         years:"12/2019- Now",
+		         caption:"Maybebaby project",
+		         link:"https://www.geekbrains.ru",
+		         desc:"junior Vue.js developer"      
+		      }]
         },{
             id:6,
             link:"https://test.ru/id",
@@ -204,7 +364,39 @@ export default new Vuex.Store({
             },{
                messenger:"telegram",
                contact:"https://t.me/vuejscodesru"   
-            }] //contacts
+            }], //contacts
+            education:[{
+		      	years: "2006-2011, 3.5 years",
+		      	caption: "Polotsk state University",
+		      	link:"https://psu.by",
+		      	desc:"information technology software"
+		      },{
+		      	years: "2018-2019",
+		      	caption: "INTUIT (Free courses)",
+		      	link:"https://intuit.ru",
+		      	desc:"basic JavaScript, HTML, CSS"
+		      },{
+		      	years: "2019 - now",
+		      	caption: "GeekBrains (Free courses)",
+		      	link:"https://geekbrains.ru",
+		      	desc:"advanced JavaScript, HTML, CSS"
+		      },{
+		      	years: "2020 - now",
+		      	caption: "ITVDN (Free course landing page)",
+		      	link:"https://itvdn.com",
+		      	desc:"basic Pug, SCSS"
+		      }],
+		      work: [{
+		         years:"09/2018 - Now",
+		         caption:"Table of Mendeleev",
+		         link:"https://mendel-info.usite.pro",
+		         desc:"Administrator"      
+		      },{
+		         years:"12/2019- Now",
+		         caption:"Maybebaby project",
+		         link:"https://www.geekbrains.ru",
+		         desc:"junior Vue.js developer"      
+		      }]
         }], //user  
         messages:[{
             type:"system",
@@ -591,7 +783,8 @@ export default new Vuex.Store({
         userloginid:0,
         selectedgroup:0,
         selectuser:0,
-        asidehide:false      
+        asidehide:false,
+        iduserpage:-1      
     },
     getters: {
     	  asidehide: state => {return state.asidehide},
@@ -913,6 +1106,9 @@ export default new Vuex.Store({
         "ASIDEHIDE" (state, value) {
         	  console.log("change "+value)
            state.asidehide=value;
+        },
+        "USERPAGE" (state,user) {
+           state.iduserpage=user.id;        
         }   
     }
 })

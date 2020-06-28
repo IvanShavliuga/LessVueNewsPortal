@@ -15,6 +15,42 @@ import messages from './messages';
 import settings from './settings';
 import commentsuser from './commentsuser';
 import postgroup from './postgroup';
+import user from './user';
+import group from './group';
+const userpage = {
+  props: ['id'],
+  data() {
+    return {
+      user:{}     
+    } 
+  },
+  template: '<appuser :user="user" :adduser="false"></appuser>',
+  components: {
+    appuser:user  
+  },
+  created() {
+    this.user = this.$store.getters.users[this.id];  
+  } 
+}
+const grouppage = {
+  props: ['id'],
+  data() {
+    return {
+      user:{},
+      group: {},
+      loginid: 0    
+    } 
+  },
+  template: '<appgroup :group="group" :loginid="loginid" :user="users[group.userId]"></appgroup>',
+  components: {
+    appgroup:group  
+  },
+  created() {
+    this.user = this.$store.getters.users[this.group.userId];
+    this.group =this.$store.gettters.groups[this.group.userId];
+    this.loginid =this.$store.gettters.loginid;  
+  } 
+}
 export const routes = [{
   	 path: '/', 
   	 component: posts
@@ -63,5 +99,13 @@ export const routes = [{
   },{
     path:'/groupview',
     component:postgroup
+  },{
+    path:'/userpage/:id',
+    component: userpage,
+    props: true  
+  },{
+    path:'/grouppage/:id',
+    component: grouppage,
+    props: true  
   }
 ]
