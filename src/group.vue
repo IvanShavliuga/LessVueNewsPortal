@@ -10,7 +10,8 @@ div.group
   p.group__cat {{group.category}}
   p.group__desc {{group.desc}}
   p.group__statistic 
-    span.group__admin @{{user.login}}
+    span.group__admin 
+      router-link(:to="'/userpage/'+user.id") @{{user.login}}
     span.group__news 
       i.far.fa-file.icon.icon__group      
       b {{group.idNews.length}}
