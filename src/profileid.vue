@@ -42,11 +42,6 @@ section.page
       ul.profilepage__friends__list
         li.profilepage__friends__item(v-for="(f,k) in friends" :key="k")
           appuser( :user="f" :adduser="false")
-    p.profilepage__friends(v-if="addfriends.length>0")
-      h4.profilepage__friends__title Added to friends: {{addfriends.length}}
-      ul.profilepage__friends__list
-        li.profilepage__friends__item(v-for="(f,k) in addfriends" :key="k+300")
-          appuser( :user="users[f.from]" :adduser="true")
     p.profilepage__groups
       h4.profilepage__groups__title Groups:
       ul.profilepage__groups__list
@@ -60,7 +55,7 @@ import alert from './alert';
 export default {
   props:{
     id: {
-      type: Number,
+      type: [Number,String],
       required:true    
     }   
   },
@@ -85,8 +80,11 @@ export default {
     
     this.users = this.$store.getters.users;
     this.user = this.users[this.id];
-    this.friends = this.$store.getters.friends;
-    this.addfriends = this.$store.getters.addfriends;
+    let fr = this.users[this.id].friends.filter((u)=>{return u!==this.id});
+    let usr = [];
+    for(let i=0; i<fr.length; i++)
+      usr.push(this.users[fr[i]]);
+    this.friends = usr;
     this.groupsadmin = this.$store.getters.groupsAdmin;
     this.loginid = this.$store.getters.loginid;
     this.systemmessages = this.$store.getters.sysmessages;  
