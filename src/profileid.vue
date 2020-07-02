@@ -1,7 +1,6 @@
 <template lang="pug">
 section.page
-  div.profilepage(:data-id="user.login+'_'+user.id") 
-    appalert( :alert="alert" :users="[user]")
+  div.profilepage(:data-id="user.login+'_'+user.id")
     h4.profilepage__header  {{user.name}}
     p.profilepage__login 
       i.fa.fa-id-badge.icon.icon__user 
@@ -51,7 +50,6 @@ section.page
 <script>
 import user from './user';
 import group from './group';
-import alert from './alert';
 export default {
   props:{
     id: {
@@ -65,6 +63,7 @@ export default {
       addfriends:[],
       users:[],
       friends:[],
+      groups:[],
       groupsadmin:[],
       systemmessages:[], 
       loginid:0,
@@ -76,8 +75,7 @@ export default {
     appgroup:group,
     appalert:alert
   },
-  created() {
-    
+  created() {    
     this.users = this.$store.getters.users;
     this.user = this.users[this.id];
     let fr = this.users[this.id].friends.filter((u)=>{return u!==this.id});
@@ -85,17 +83,9 @@ export default {
     for(let i=0; i<fr.length; i++)
       usr.push(this.users[fr[i]]);
     this.friends = usr;
-    this.groupsadmin = this.$store.getters.groupsAdmin;
-    this.loginid = this.$store.getters.loginid;
-    this.systemmessages = this.$store.getters.sysmessages;  
-    this.alert = {
-      header: this.systemmessages[0].title,
-      body:this.systemmessages[0].body,
-      status:`${(this.systemmessages[0].read)?('прочитано'):('не прочитано')}`,
-      userId:this.systemmessages[0].to,
-      read:this.systemmessages[0].read,
-      date:"12.05.2020 14:54:36"       
-    }
+    this.groups = this.$store.getters.groups;
+    this.groupsadmin = this.groups.filter( (g) => {return g.idAdmin==this.id})
+    this.loginid = this.$store.getters.loginid;    
   }
 }  
 </script>
