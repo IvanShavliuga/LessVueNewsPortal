@@ -17,6 +17,8 @@ import commentsuser from './commentsuser';
 import postgroup from './postgroup';
 import user from './user';
 import group from './group';
+import profileid from './profileid.vue';
+
 const userpage = {
   props: ['id'],
   data() {
@@ -107,5 +109,9 @@ export const routes = [{
     path:'/grouppage/:id',
     component: grouppage,
     props: true  
+  },{
+    path:'/profile/:id',
+    component:profileid,
+    props:true  
   }
 ]

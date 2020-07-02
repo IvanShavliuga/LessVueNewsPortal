@@ -7,7 +7,7 @@ div.user(:data-id="user.login+'_'+user.id")
   h4.user__header  {{user.name}}
   p.user__login 
     i.fa.fa-id-badge.icon.icon__user 
-    a(:href="user.link" target="_blank") {{user.login}}
+    router-link(:to="'/profile/'+user.id") {{user.login}}
   p.user__info {{user.age}},  {{user.city}}
   p.user__info {{user.spec}}
   p.user__info Friends: {{user.friends.length}}
