@@ -1,6 +1,6 @@
 <template lang="pug">
 section.page
-  appbook(v-for="(b,k) in books" :book="b", :key="k+100" :user="users[b.userId]")
+  appbook(v-for="(b,k) in books" :book="b", :key="k+100" :user="users[b.userId]" )
 </template>
 <script>
 import book from './book';

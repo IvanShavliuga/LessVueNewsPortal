@@ -16,7 +16,7 @@ div.code
           a(href="https://codepen.io") CodePen 
       p.code__codepen__block
         h3.code__title 
-      appstaticpost(:like="code.like" :views="code.views" :comments="code.comments" :repost="code.repost" :user="user")
+      appstaticpost(:like="code.like" :views="code.views" :comments="code.comments" :repost="code.repost" :user="user"  type="book")
     article(v-else-if="src==='github'", :data-id="code.id").code__github__block
       p.code__github
         div.code__github__image 
@@ -24,7 +24,7 @@ div.code
             i.fab.fa-github.icon.icon__code
         h3.code__title {{code.title}} 
         p.code__profile {{code.profile[key]}}
-      appstaticpost(:like="code.like" :views="code.views" :comments="code.comments" :repost="code.repost" :user="user")
+      appstaticpost(:like="code.like" :views="code.views" :comments="code.comments" :repost="code.repost" :user="user" type="book")
     article(v-else, :data-id="code.id").code__otherlink
       p.code__linkcode
         div.code__linkcode__image
@@ -36,7 +36,7 @@ div.code
                     :views="code.views" 
                     :comments="code.comments" 
                     :repost="code.repost" 
-                    :user="user")
+                    :user="user"  type="book")
 </template>
 <script>
 import staticpost from './staticpost';

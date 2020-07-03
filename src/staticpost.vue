@@ -29,13 +29,19 @@ export default {
     user: {
       type: Object,
       required:true    
+    },
+    type: {
+      type: String,
+      required: true    
     }  
   },
   methods: {
     clickbutton(type) {
+      
       switch(type) {
         case "like":
-          this.$emit("like",{type:"Object",data:this.like.length+1});
+          if(this.type=="like")
+            this.$store.dispatch("")
           break;
         case "repost":
           this.$emit("repost",this.repost.length+1);

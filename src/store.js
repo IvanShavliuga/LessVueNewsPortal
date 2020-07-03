@@ -853,7 +853,7 @@ export default new Vuex.Store({
            for(let i=0; i<fr.length; i++)
               usr.push(state.users[fr[i]]);
            return usr;                               
-        },
+        },        
         groupsUser: state => {
            let grp = [];
            let addcheck=false;
