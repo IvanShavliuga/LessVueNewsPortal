@@ -7,6 +7,8 @@ section.page
       a(:href="user.link" target="_blank") {{user.login}}
     p.profilepage__info {{user.age}},  {{user.city}}
     p.profilepage__info {{user.spec}}
+    p.profilepage__button 
+      button(v-if="friendslogin") Add to friends
     p.profilepage__contacts
       h4.profilepage__contacts__title Contacts:
       ul.profilepage__contacts__list
@@ -45,7 +47,7 @@ section.page
       h4.profilepage__groups__title Groups:
       ul.profilepage__groups__list
         li.profilepage__groups__item(v-for="(f,k) in groupsadmin" :key="k")
-          appgroup( :group="f" :loginid="loginid" :user="user")    
+          appgroup( :group="f" :loginid="id" :user="user")    
 </template>
 <script>
 import user from './user';
@@ -67,25 +69,32 @@ export default {
       groupsadmin:[],
       systemmessages:[], 
       loginid:0,
-      alert:{}    
+      loginuser:{}  
     }  
   },
   components: {
     appuser:user,
-    appgroup:group,
-    appalert:alert
+    appgroup:group
+  },
+  methods: {
+    friendslogin() {
+      let fr = this.loginuser.friends.filter( (f)=>{return f == this.id});
+      return fr!=[undefined];   
+    }
   },
   created() {    
+    this.loginid = this.$store.getters.loginid;
     this.users = this.$store.getters.users;
     this.user = this.users[this.id];
-    let fr = this.users[this.id].friends.filter((u)=>{return u!==this.id});
+    this.loginuser = this.users[this.loginid];
+    let fr = this.users[this.id].friends.filter((u)=>{return u!=this.id});
     let usr = [];
     for(let i=0; i<fr.length; i++)
       usr.push(this.users[fr[i]]);
     this.friends = usr;
     this.groups = this.$store.getters.groups;
     this.groupsadmin = this.groups.filter( (g) => {return g.idAdmin==this.id})
-    this.loginid = this.$store.getters.loginid;    
+        
   }
 }  
 </script>
